@@ -1,0 +1,2001 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Each Intelligent Cities API provides asset and location information, with additional URI resources and data collected from sensors installed on intelligent lighting fixtures in roadways and parking ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="Intelligent Cities APIs"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Intelligent Cities APIs</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<div class="nested0" id="topic"><h1 class="title topictitle1">Intelligent Cities APIs</h1>
+<div class="topic concept nested1" id="concept_dbd1db1a-5644-4666-a4c5-037208e6cdee"><h2 class="title topictitle2">Intelligent Cities API Overview</h2>
+<div class="body conbody"><p class="p">Each Intelligent Cities API provides asset and location information, with additional URI resources and data collected from sensors installed on intelligent lighting fixtures in roadways and parking areas. Each API service is described below.</p>
+<div class="note note"><span class="notetitle">Note:</span> 
+            <p class="p">Please contact your Current, Powered by GE representative to obtain the following before you start developing: </p>
+
+            <ol class="ol" id="concept_dbd1db1a-5644-4666-a4c5-037208e6cdee__ol_f03f745c-d32e-473c-a64b-d69d3744404c"><li class="li">client-id and client-secret to generate client tokens</li>
+<li class="li">predix-zone-id for each service</li>
+<li class="li">services' URLs.</li>
+</ol>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">Parking Planning </h3>
+            
+            <p class="p">The Parking Planning service provides parking metadata that is collected from intelligent lighting sensors installed along public roadways or in parking lots. Each time a vehicle enters or leaves a parking space, a timestamped event is created and stored in the Predix cloud. </p>
+
+            <p class="p">This data can be obtained from a single sensor or a group of sensors, as needed, and can provide valuable insights about the parking activity in a given region. The data can also be used to improve safety and parking convenience.</p>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">Pedestrian Planning</h3>
+            
+            <p class="p">The Pedestrian Planning service provides pedestrian metadata that is collected from intelligent lighting sensors installed along public roadways or in parking lots. </p>
+
+            <p class="p">As pedestrians enter or leave a region of interest, the service creates and stores a timestamped event, counting each event. This data can be obtained from a single sensor or a group of sensors, as needed, to provide insights to city officials and local businesses about pedestrian usage in a given region. The data can also be used to enhance safety and convenience.</p>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">Traffic Planning</h3>
+            
+            <p class="p">The Traffic Planning service provides vehicle metadata collected from intelligent lighting sensors installed along public roadways.</p>
+
+            <p class="p">As vehicles pass by these sensors, information such as speed, direction, lane use, and volume (counts) are collected and stored with a time-stamp in the Predix cloud. The data can be viewed from any number of intelligent street lights in a given region and can present both historical and near real-time information. </p>
+
+            <p class="p">The density, range, and flexibility of this sensor data can provide insights into traffic patterns at different intervals. Along with facilitating the planning for future safety and convenience enhancements, the data can reveal opportunities to optimize traffic flows.</p>
+
+            <p class="p">One response is provided for each car that traverses the area monitored by the device. </p>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">Situational Awareness (Media)</h3>
+            
+            <p class="p">The Situational Awareness service provides access to images, video, and other media collected from intelligent lighting sensors installed along public roadways or parking lots. </p>
+
+            <p class="p">The media can be requested using a date range starting near real-time and ending based on availability. This data can be obtained from a single sensor or a group of sensors, as needed, to provide insights to city officials that enhance awareness. This service can be used in concert with other Intelligent Environments services to enhance a use case of interest.</p>
+
+            <p class="p">Images are captured for a variety of scenarios for vehicles and pedestrians.</p>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">WebSocket Information for Intelligent Cities APIs</h3>
+            
+            <p class="p">WebSocket functions with the Intelligent Cities API services, and provides the ability to retrieve near real-time data to obtain insight into events collected by each service. </p>
+
+        </div>
+</div>
+</div>
+<div class="topic reference nested1" id="reference_09c46b94-4b17-4795-aac8-573072506e9e"><h2 class="title topictitle2">Parking Planning</h2>
+<div class="body refbody"><div class="section">
+      <div class="p">There are two ways to retrieve Parking Planning data.<ol class="ol" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__ol_cnd_jdr_kx"><li class="li">Via WebSocket to retrieve near-real-time data based on: <ul class="ul" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__ul_av2_mdr_kx"><li class="li">AssetUid</li>
+<li class="li">Locations</li>
+<li class="li">LocationUid</li>
+</ul>
+</li>
+<li class="li"> Via REST APIs to retrieve historical data based on:<ul class="ul" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__ul_agr_tdr_kx"><li class="li">AssetUid</li>
+<li class="li">Locations</li>
+<li class="li">LocationUid</li>
+</ul>
+<div class="note note"><span class="notetitle">Note:</span> You can only retrieve one event type - either PKIN or PKOUT - when retrieving historical data.</div>
+</li>
+</ol>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Near-Real-Time Data</h3>
+      
+      <p class="p">The WebSocket URL provides a link to near-real-time data for vehicle parking at the specified monitored location. You must use a WebSocket client to retrieve this data.</p>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Near-Real-Time Data by AssetUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_j12_kq5_gx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%">WebSocket URL</td>
+<td class="entry" valign="top" width="75.49019607843137%">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%">JSON Request Parameters</td>
+<td class="entry" valign="top" width="75.49019607843137%">{“assetUid":"&lt;assetUID&gt;","eventTypes":["&lt;eventType1&gt;, &lt;eventType2&gt;”]}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%">Sample JSON Request</td>
+<td class="entry" valign="top" width="75.49019607843137%">{“assetUid":"CAMERA-HYP1083-CAM-L","eventTypes":["PKIN,PKOUT”]} </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">JSON Request Parameters</h3>
+      
+    </div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_ygs_3tx_kx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25%">Parameter</td>
+<td class="entry" valign="top" width="25%">Description</td>
+<td class="entry" valign="top" width="25%">Required?</td>
+<td class="entry" valign="top" width="25%">Filter Values</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">assetUid</td>
+<td class="entry" valign="top" width="25%">GE identifier for the device.</td>
+<td class="entry" valign="top" width="25%">Yes</td>
+<td class="entry" valign="top" width="25%">Value such as "CAMERA-HYP1083-CAM-L".</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">eventType</td>
+<td class="entry" valign="top" width="25%">Filter for parking events.</td>
+<td class="entry" valign="top" width="25%">Yes</td>
+<td class="entry" valign="top" width="25%">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">If you filter by PKIN, you receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">If you filter by PKOUT you receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Near-Real-Time Data by Locations</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_dv3_rq5_gx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%">WebSocket URL</td>
+<td class="entry" valign="top" width="75.49019607843137%">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%">JSON Request Parameters</td>
+<td class="entry" valign="top" width="75.49019607843137%">{"bbox":"&lt;long,lat&gt;","eventTypes":[“ &lt;eventType1&gt;,&lt;eventType2&gt;”]}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%">Sample JSON Request</td>
+<td class="entry" valign="top" width="75.49019607843137%">{"bbox":"32.715675:-117.161230,32.708498:-117.151681","eventTypes":[“PKIN,PKOUT”]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">JSON Request Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_f13_jry_kx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25%">Parameter</td>
+<td class="entry" valign="top" width="25%">Description</td>
+<td class="entry" valign="top" width="25%">Required?</td>
+<td class="entry" valign="top" width="25%">Filter Values</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">bbox</td>
+<td class="entry" valign="top" width="25%">The GPS-defined area containing the asset</td>
+<td class="entry" valign="top" width="25%"> </td>
+<td class="entry" valign="top" width="25%">GPS values that define the bounding box area </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">eventTypes</td>
+<td class="entry" valign="top" width="25%">Filter for parking events.</td>
+<td class="entry" valign="top" width="25%"> </td>
+<td class="entry" valign="top" width="25%">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">If you filter by PKIN, you receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">If you filter by PKOUT you receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Near-Real-Time Data by LocationUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_p23_ssy_kx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%">WebSocket URL</td>
+<td class="entry" valign="top" width="50%">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%">JSON Request Parameters</td>
+<td class="entry" valign="top" width="50%">{“locationUid":"&lt;location-UID&gt;","eventTypes":[" &lt;eventType1&gt;,&lt; eventType2&gt;"]}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%">Sample JSON Request</td>
+<td class="entry" valign="top" width="50%">{“locationUid":"LOCATION-282","eventTypes":["PKIN,PKOUT"]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">JSON Request Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_udn_lty_kx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25%">Parameter</td>
+<td class="entry" valign="top" width="25%">Description</td>
+<td class="entry" valign="top" width="25%">Required?</td>
+<td class="entry" valign="top" width="25%">Filter Values</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">locationUid</td>
+<td class="entry" valign="top" width="25%">The identifier assigned to this location </td>
+<td class="entry" valign="top" width="25%"> </td>
+<td class="entry" valign="top" width="25%">Value such as "LOCATION-282"</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">eventType</td>
+<td class="entry" valign="top" width="25%">Filter for pedestrian events.</td>
+<td class="entry" valign="top" width="25%">Yes</td>
+<td class="entry" valign="top" width="25%">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">If you filter by PKIN, you receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">If you filter by PKOUT you receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Sample Response</h3>
+      
+      <div class="note note"><span class="notetitle">Note:</span> You must use a WebSocket client to retrieve this data.</div>
+
+      <pre class="pre codeblock">{
+"locationUid": "LOCATION-282",
+"assetUid": "CAMERA-HYP1070-CAM-R",
+"eventType": "PKIN",
+"timestamp": 1474479726251,
+"properties": {
+"pixelCoordinates": "33:-117,33:-117,33:-117,33:-117",
+"eventUid": "Q0FNRVJBLUhZUDEwNzAtQ0FNLVIsMTQ3NDQ3OTcyNjI1MQ==",
+"objectUid": "1474479726",
+      "geoCoordinates": "32.7134021:-117.1575105,32.7133999:-117.1574874,32.7133482:-117.1574878,32.7133504:-117.1575100",
+      "imageAssetUid": "CAMERA-HYP1070-CAM-R"
+},
+"measures": {}
+}
+</pre>
+
+      <div class="p">
+        <div class="note note"><span class="notetitle">Note:</span> The above examples show the interval in seconds, but your PARKING simulation is shown in minutes.</div>
+
+      </div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Historical Data by AssetUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_u3z_44p_hx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">URI for PKIN</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v2/assets/{assetUid}/events?eventType=PKIN{startTime,endTime}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">URI for PKOUT</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v2/assets/{assetUid}/events?eventType=PKOUT{startTime,endTime}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI for PKIN</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v2/assets/CAMERA-HYP1070-CAM-F/events?eventType=PKIN&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI for PKOUT</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v2/assets/CAMERA-HYP1070-CAM-F/events?eventType=PKOUT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_q5t_jh1_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e436">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e438">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e440">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e442">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e436 ">assetUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e438 ">GE identifier for the device.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e440 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e442 ">Value such as CAMERA-HYP1070-CAM-F.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e436 ">events?</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e438 ">Query for historical data</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e440 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e442 ">eventTypes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e436 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e438 ">Filter for parking events.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e440 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e442 ">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">If you filter by PKIN, you receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">If you filter by PKOUT you receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e436 ">startTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e438 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e440 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e442 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e436 ">endTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e438 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e440 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e442 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Historical Data by Locations</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_kfs_jr5_gx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">URI for PKIN</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v2/locations/events?bbox={lat,long}&amp;locationType=PARKING_ZONE&amp;eventTypes=PKIN{startTime,endTime}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">URI for PKOUT</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url?/v2/locations/events?eventTypes=PKOUT&amp;bbox={lat,long}&amp;locationType=PARKING_ZONE&amp;{startTime,endTime}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI for PKIN</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url/v2/locations/events?bbox=32.715675:-117.161230,32.708498:-117.151681&amp;locationType=PARKING_ZONE&amp;eventTypes=PKIN&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI for PKOUT</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v2/assets/CAMERA-HYP1070-CAM-F/events?eventTypes=PKOUT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_msy_kh1_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e558">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e560">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e562">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e564">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e558 ">bbox</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e560 ">GPS location for the event.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e562 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e564 ">Value such as 32.715675:-117.161230,32.708498:-117.151681.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e558 ">events?</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e560 ">Query for historical data</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e562 "> </td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e564 ">eventTypes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e558 ">locationType</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e560 ">Filter by type of location.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e562 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e564 ">Insert one of the following codes for a specific location type:<dl class="dl"><dt class="dt dlterm">PARKING SPOT</dt>
+<dd class="dd">If you filter by PARKING_SPOT, you receive a list of demarcated parking spaces within the boundaries. (Not applicable in v2.)</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">PARKING ZONE</dt>
+<dd class="dd">PARKING_ZONE consists of four GEO coordinates of non-demarcated parking spaces within the boundaries.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">WALKWAY</dt>
+<dd class="dd">WALKWAY consists of two GEO coordinates indicating a trip wire in pedestrian walkways within the boundaries.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">TRAFFIC LANE</dt>
+<dd class="dd">TRAFFIC_LANE consists of two GEO coordinates indicating a trip wire in traffic lanes within the boundaries.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">OTHERS consists of non-standard location types within the boundaries.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">RETAIL STORE</dt>
+<dd class="dd">RETAIL-STORE consists of retail stores within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e558 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e560 ">Filter for parking events.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e562 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e564 ">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">If you filter by PKIN, you receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">If you filter by PKOUT you receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e558 ">startTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e560 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e562 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e564 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e558 ">endTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e560 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e562 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e564 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Historical Data by LocationUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_ul3_lr5_gx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">URI for PKIN</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v2/locations/{LocationUid}/events?eventTypes=PKIN{startTime,endTime,size,page}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">URI for PKOUT</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;productionurl&gt;/v2/locations/{LocationUid}/events?eventTypes=PKOUT&amp;{startTime,endTime,size,page}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI for PKIN</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v2/locations/LOCATION-282/events?eventTypes=PKIN&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI for PKOUT</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url/v2//locations/LOCATION-282/events?eventTypes=PKOUT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_typ_lh1_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e724">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e726">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e728">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e730">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e724 ">locationUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e726 ">Location of a specific asset.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e728 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e730 ">Value such as LOCATION-282.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e724 ">events?</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e726 ">Query for historical data</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e728 "> </td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e730 ">eventTypes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e724 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e726 ">Filter for parking events.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e728 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e730 ">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">If you filter by PKIN, you receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">If you filter by PKOUT you receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e724 ">startTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e726 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e728 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e730 ">Numerical value, such as 1453766605577.<div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e724 ">endTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e726 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e728 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e730 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Response Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__IOTdkNjI0ZGEtYmVjZC00MjdhLWFjNmItZjMxZGU1ZjZiNzU4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="14.189837008628956%" id="d5272e803">Parameter</th>
+<th class="entry" valign="top" width="10.258868648130393%" id="d5272e805">Data Type</th>
+<th class="entry" valign="top" width="75.55129434324066%" id="d5272e807">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d5272e803 "> locationUid</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d5272e805 "> </td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d5272e807 ">Unique, customer-defined identifier, for a specific location within the monitored area.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d5272e803 ">assetUid</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d5272e805 "> </td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d5272e807 ">The customer-defined identifier for a specific asset at this location.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d5272e803 ">eventTypes</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d5272e805 "> </td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d5272e807 ">Identifies this type of event:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">Vehicle entering parking space.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">Vehicle exiting parking space.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d5272e803 ">timestamp</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d5272e805 "> </td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d5272e807 ">Actual timestamp when event occurred. Timestamps are in EPOCH format.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d5272e803 ">properties</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d5272e805 "> </td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d5272e807 ">
+                <dl class="dl"><dt class="dt dlterm">pixelCoordinates</dt>
+<dd class="dd">Local coordinates of a in the image.</dd>
+</dl>
+
+                <dl class="dl"><dt class="dt dlterm">eventUid</dt>
+<dd class="dd">The identifier assigned to a specific parking event.</dd>
+</dl>
+
+                <dl class="dl"><dt class="dt dlterm">objectUid</dt>
+<dd class="dd">The identifier of a specific vehicle.</dd>
+</dl>
+
+                <dl class="dl"><dt class="dt dlterm">geoCoordinates</dt>
+<dd class="dd">The GPS coordinates of a vehicle.</dd>
+</dl>
+
+                <dl class="dl"><dt class="dt dlterm">imageAssetUid</dt>
+<dd class="dd">The identifier of the camera that provided the image.</dd>
+</dl>
+
+                <div class="note note"><span class="notetitle">Note:</span> To retrieve the image, use the Media-on-Demand API by providing the imageAssetUid and timestamp from this response.</div>
+
+              </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d5272e803 ">measures</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d5272e805 "> </td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d5272e807 ">There is no content for this field.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Sample Response</h3>
+      
+    </div>
+<div class="section">
+      <pre class="pre codeblock">{
+  "content": [
+    {
+      "locationUid": "LOCATION-282",
+      "assetUid": "CAMERA-HYP1070-CAM-R",
+      "eventTypes": "PKOUT",
+      "timestamp": 1473897364055,
+      "properties": {
+        "pixelCoordinates": "33:-117,33:-117,33:-117,33:-117",
+        "eventUid": "Q0FNRVJBLUhZUDEwNzAtQ0FNLVIsMTQ3Mzg5NzM2NDA1NQ==",
+        "objectUid": "1473897356",
+        "geoCoordinates": "32.7134562:-117.1575102,32.7134535:-117.1574876,32.7133999:-117.1574874,32.7134021:-117.1575105",
+        "imageAssetUid": "CAMERA-HYP1070-CAM-R"
+      },
+      "measures": {}
+    }</pre>
+
+    </div>
+</div>
+</div>
+<div class="topic reference nested1" id="reference_3dd4f077-428d-473f-91be-64677b081494"><h2 class="title topictitle2">Pedestrian Planning</h2>
+<div class="body refbody"><div class="section">
+      <div class="p">There are three ways to retrieve near-real-time data:<ul class="ul" id="reference_3dd4f077-428d-473f-91be-64677b081494__ul_zqg_clz_bx"><li class="li">By AssetUid</li>
+<li class="li">By Locations</li>
+<li class="li">By LocationUid</li>
+</ul>
+</div>
+
+      <div class="p">There are three ways to retrieve historical data:<ul class="ul" id="reference_3dd4f077-428d-473f-91be-64677b081494__ul_ndk_3lz_bx"><li class="li">By AssetUid</li>
+<li class="li">By Locations</li>
+<li class="li">By LocationUid</li>
+</ul>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Near-Real-Time Data</h3>
+      
+      <p class="p">The WebSocket URL provides a link to near-real-time data for Pedestrian events. You must use a WebSocket client to retrieve this data.</p>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Near-Real-Time Data by AssetUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_opj_rt1_cx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%">WebSocket URL</td>
+<td class="entry" valign="top" width="66.66666666666666%">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%">JSON Request Parameters</td>
+<td class="entry" valign="top" width="66.66666666666666%">{“assetUid":"&lt;assetUID&gt;","eventTypes":["&lt;eventType1&gt;”]}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%">Sample JSON Request</td>
+<td class="entry" valign="top" width="66.66666666666666%">{“assetUid":"CAMERA-HYP1083-CAM-L","eventTypes":["PEDEVT”]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">JSON Request Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e987">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e989">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e991">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e993">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e987 ">assetUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e989 ">GE identifier for the device.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e991 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e993 ">Value such as "CAMERA-HYP1083-CAM-L".</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e987 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e989 ">Filter for pedestrian events.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e991 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e993 ">Insert PEDEVT to receive a list of pedestrians by count, direction, and speed within the monitored boundary.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Near-Real-Time Data by Locations</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_esx_h51_cx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%">WebSocket URL</td>
+<td class="entry" valign="top" width="66.66666666666666%">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%">JSON Request Parameters</td>
+<td class="entry" valign="top" width="66.66666666666666%">{"bbox":"&lt;long,lat&gt;","eventTypes":[“ &lt;eventType1&gt;”]}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%">Sample JSON Request</td>
+<td class="entry" valign="top" width="66.66666666666666%">{"bbox":"32.715675:-117.161230,32.708498:-117.151681","eventTypes":[“PEDEVT”]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">JSON Request Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_fsx_h51_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e1054">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e1056">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e1058">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e1060">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1054 ">bbox</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1056 ">GPS location of the asset</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1058 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1060 ">Value such as "32.715675:-117.161230,32.708498:-117.151681".</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1054 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1056 ">Filter for pedestrian events.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1058 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1060 ">Insert PEDEVT to receive a list of pedestrians by count, direction, and speed within the monitored boundary.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Near-Real-Time Data by LocationUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_xw1_cqb_hx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%">WebSocket URL</td>
+<td class="entry" valign="top" width="50%">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%">JSON Request Parameters</td>
+<td class="entry" valign="top" width="50%">{“locationUid":"&lt;location-UID&gt;","eventTypes":[" &lt;eventType1&gt;"]}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%">Sample JSON Request</td>
+<td class="entry" valign="top" width="50%">{“locationUid":"LOCATION-282","eventTypes":["PEDEVT"]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_efr_4sb_hx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25%">Parameter</td>
+<td class="entry" valign="top" width="25%">Description</td>
+<td class="entry" valign="top" width="25%">Required?</td>
+<td class="entry" valign="top" width="25%">Filter Values</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">locationUid</td>
+<td class="entry" valign="top" width="25%">The identifier assigned to this location </td>
+<td class="entry" valign="top" width="25%"> </td>
+<td class="entry" valign="top" width="25%">Value such as "LOCATION-282"</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">eventTypes</td>
+<td class="entry" valign="top" width="25%">Filter for pedestrian events.</td>
+<td class="entry" valign="top" width="25%">Yes</td>
+<td class="entry" valign="top" width="25%">Insert PEDEVT to receive a list of pedestrians by count, direction, and speed within the monitored boundary. </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Historical Data by AssetUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_nsk_s51_cx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="50%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="50%">&lt;production url/v2/assets/{assetUid}/events?eventTypes=PEDEVT&amp;{startTime,endTime}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry" valign="top" width="50%">&lt;production url/v2/assets/CAMERA-HYP1039-CAM-F/events?eventTypes=PEDEVT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_yvb_w51_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e1189">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e1191">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e1193">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e1195">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1189 ">assetUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1191 ">GE identifier for the device.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1193 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1195 ">Value such as CAMERA-HYP1039-CAM-F</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1189 ">events?</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1191 ">Query for historical data</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1193 "> </td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1195 ">eventTypes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1189 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1191 ">Filter for pedestrian events.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1193 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1195 ">Insert PEDEVT to receive a list of pedestrians by count, direction, and speed within the monitored boundary. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1189 ">startTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1191 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1193 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1195 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned. </div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1189 ">endTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1191 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1193 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1195 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Historical Data by Locations</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_zhx_2v1_cx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="66.66666666666666%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="66.66666666666666%">&lt;production url&gt;/v2/locations/events?eventTypes=PEDEVT&amp;bbox={lat,long}&amp;locationType=WALKWAY&amp;{startTime,endTime}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry" valign="top" width="66.66666666666666%">&lt;production url/v2/locations/events?eventTypes=PEDEVT&amp;bbox=32.715675:-117.161230,32.708498:-117.151681&amp;locationType=WALKWAY&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_flr_fv1_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e1288">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e1290">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e1292">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e1294">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1288 ">bbox</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1290 ">The GPS-defined area containing the asset</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1292 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1294 ">Value such as 32.715675:-117.161230,32.708498:-117.151681.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1288 ">events?</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1290 ">Query for historical data</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1292 "> </td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1294 ">eventTypes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1288 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1290 ">Filter for pedestrian events.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1292 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1294 ">Insert PEDEVT to receive a list of pedestrians by count, direction, and speed within the monitored boundary. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1288 ">startTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1290 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1292 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1294 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1288 ">endTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1290 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1292 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1294 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Historical Data by LocationUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_uks_hv1_cx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="66.66666666666666%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="66.66666666666666%">&lt;production url/v2/locations/{locationUID}/events?eventTypes=PEDEVT&amp;{startTime,endTime}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry" valign="top" width="66.66666666666666%">&lt;production url/v2/locations/LOCATION-30-1039-2-S/events?eventTypes=PEDEVT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_vvj_3v1_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e1386">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e1388">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e1390">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e1392">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1386 ">locationUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1388 ">The specific location within the bounding box</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1390 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1392 ">Value such as LOCATION-30-1039-2-S</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1386 ">events</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1388 ">Query for historical data</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1390 "> </td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1392 ">eventTypes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1386 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1388 ">Filter for pedestrian events.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1390 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1392 ">Insert PEDEVT to receive a list of pedestrians by count, direction, and speed within the monitored boundary. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1386 ">startTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1388 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1390 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1392 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1386 ">endTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1388 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1390 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1392 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Response Parameters</h3>
+      
+    </div>
+<div class="section">
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_xh3_4nb_hx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="22.22222222222222%" id="d5272e1456">Parameter</th>
+<th class="entry" valign="top" width="22.22222222222222%" id="d5272e1458">Data Type</th>
+<th class="entry" valign="top" width="55.55555555555556%" id="d5272e1460">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1456 ">locationUid</td>
+<td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1458 ">String</td>
+<td class="entry" valign="top" width="55.55555555555556%" headers="d5272e1460 ">Unique, customer-defined identifier, for a specific location within the monitored area.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1456 ">assetUid</td>
+<td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1458 ">String</td>
+<td class="entry" valign="top" width="55.55555555555556%" headers="d5272e1460 ">The customer-defined identifier for a specific asset at this location.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1456 ">eventTypes</td>
+<td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1458 ">String</td>
+<td class="entry" valign="top" width="55.55555555555556%" headers="d5272e1460 ">Identifies this kind of event:<dl class="dl"><dt class="dt dlterm">PEDEVT</dt>
+<dd class="dd">Insert PEDEVT to receive a list of pedestrians by count, direction, and speed within the monitored boundary.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1456 ">timestamp</td>
+<td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1458 ">Number</td>
+<td class="entry" valign="top" width="55.55555555555556%" headers="d5272e1460 ">Actual timestamp when event occurred. Timestamps are in EPOCH format.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1456 ">properties</td>
+<td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1458 ">Map</td>
+<td class="entry" valign="top" width="55.55555555555556%" headers="d5272e1460 ">Properties of the event<dl class="dl"><dt class="dt dlterm">directionUnit </dt>
+<dd class="dd">DEGREE</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">speedUnit</dt>
+<dd class="dd">MPH</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1456 "> measures</td>
+<td class="entry" valign="top" width="22.22222222222222%" headers="d5272e1458 ">String</td>
+<td class="entry" valign="top" width="55.55555555555556%" headers="d5272e1460 ">Pedestrian properties being tracked by the device.<dl class="dl"><dt class="dt dlterm">weighted average direction</dt>
+<dd class="dd">value = from 0 to 360</dd>
+<dd class="dd">(See Degree Range diagram below)</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">weighted average speed</dt>
+<dd class="dd">value = 3, unit = mph</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">pedestrianCount</dt>
+<dd class="dd">value = count, unit = number</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" colspan="3" valign="top" headers="d5272e1456 d5272e1458 d5272e1460 "><img class="image" id="reference_3dd4f077-428d-473f-91be-64677b081494__image_e59f01e0-21b4-46ea-81f2-3bdf12536959" src="i_traffic_degrees.png"></img></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section">
+      <pre class="pre codeblock">{
+  "content": [
+    {
+      "locationUid": "LOCATION-30-1039-2-S",
+      "assetUid": "CAMERA-HYP1039-CAM-F",
+      "eventTypes": "PEDEVT",
+      "timestamp": 1473897249009,
+      "properties": {
+        "directionUnit": "DEGREE",
+        "speedUnit": "MPH",
+        "eventUid": "Q0FNRVJBLUhZUDEwMzktQ0FNLUYsMTQ3Mzg5NzI0OTAwOQ=="
+      },
+      "measures": {
+        "direction": 130,
+        "pedestrianCount": 30,
+        "speed": 3
+      }
+    }</pre>
+
+    </div>
+</div>
+</div>
+<div class="topic reference nested1" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2"><h2 class="title topictitle2">Traffic Planning</h2>
+<div class="body refbody"><div class="section">
+            <p class="p">This API returns details on how traffic is flowing, by lane, on a monitored road.</p>
+
+      <div class="p">There are three ways to retrieve near-real-time data:<ul class="ul" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__ul_zqg_clz_bx"><li class="li">By AssetUid</li>
+<li class="li">By Locations</li>
+<li class="li">By LocationUid</li>
+</ul>
+</div>
+
+      <div class="p">There are three ways to retrieve historical data:<ul class="ul" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__ul_ndk_3lz_bx"><li class="li">By AssetUid</li>
+<li class="li">By Locations</li>
+<li class="li">By LocationUid</li>
+</ul>
+</div>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Near-Real-Time Data by AssetUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_pbx_1db_cx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%">WebSocket URL</td>
+<td class="entry" valign="top" width="66.66666666666666%">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%">JSON Request Parameters</td>
+<td class="entry" valign="top" width="66.66666666666666%">{“assetUid":"&lt;assetUID&gt;","eventTypes":["&lt;eventType1&gt;”]}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%">Sample JSON Request</td>
+<td class="entry" valign="top" width="66.66666666666666%">{“assetUid":"CAMERA-HYP1083-CAM-L","eventTypes":["TFEVT”]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">JSON Request Parameters</h3>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e1626">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e1628">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e1630">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e1632">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1626 ">assetUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1628 ">GE identifier for the device.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1630 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1632 ">Value such as "CAMERA-HYP1083-CAM-L".</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1626 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1628 ">Type of event.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1630 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1632 ">If you filter by TFEVT, you receive a list of vehicles in traffic lanes.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Near-Real-Time Data by Locations</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_vm2_c1c_hx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%">WebSocket URL</td>
+<td class="entry" valign="top" width="66.66666666666666%">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%">JSON Request Parameters</td>
+<td class="entry" valign="top" width="66.66666666666666%">{"bbox":"&lt;long,lat&gt;","eventTypes":[“ &lt;eventType1&gt;”]}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%">Sample JSON Request</td>
+<td class="entry" valign="top" width="66.66666666666666%">{"bbox":"32.715675:-117.161230,32.708498:-117.151681","eventTypes":[“TFEVT”]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">JSON Request Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_nl5_m1c_hx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="25%" id="d5272e1693">Parameter</th>
+<th class="entry" valign="top" width="25%" id="d5272e1695">Description</th>
+<th class="entry" valign="top" width="25%" id="d5272e1697">Required?</th>
+<th class="entry" valign="top" width="25%" id="d5272e1699">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25%" headers="d5272e1693 ">bbox</td>
+<td class="entry" valign="top" width="25%" headers="d5272e1695 ">GPS location of the asset</td>
+<td class="entry" valign="top" width="25%" headers="d5272e1697 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d5272e1699 ">Value such as "32.715675:-117.161230,32.708498:-117.151681".</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d5272e1693 ">eventTypes</td>
+<td class="entry" valign="top" width="25%" headers="d5272e1695 ">Filter for traffic events.</td>
+<td class="entry" valign="top" width="25%" headers="d5272e1697 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d5272e1699 ">If you filter by TFEVT, you receive a list of vehicles in traffic lanes.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Near-Real-Time Data by LocationUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_v5r_pkz_bx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%">WebSocket URL</td>
+<td class="entry" valign="top" width="50%">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%">JSON Request Parameters</td>
+<td class="entry" valign="top" width="50%"> </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%">Sample JSON Request</td>
+<td class="entry" valign="top" width="50%">{“locationUid":"LOCATION-282","eventTypes":["TFEVT"]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">JSON Request Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_fvg_2db_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e1759">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e1761">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e1763">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e1765">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1759 ">locationUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1761 ">The identifier assigned to this location </td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1763 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1765 ">Value such as "LOCATION-282".</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1759 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1761 ">Filter for traffic events.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1763 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1765 ">If you filter by TFEVT, you receive a list of vehicles in traffic lanes.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Historical Data by AssetUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_jbj_jsz_bx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="50%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="50%">&lt;production url/v2/assets/{assetUid}events?eventTypes=TFEVT&amp;(startTime,endTime)</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry" valign="top" width="50%">&lt;production url/v2/assets/CAMERA-HYP1037-CAM-F/events?eventTypes=TFEVT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_qvp_hdb_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e1829">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e1831">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e1833">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e1835">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1829 ">assetUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1831 ">GE identifier for the device.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1833 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1835 ">For example, CAMERA-HYP1037-CAM-F</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1829 ">events?</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1831 ">Query for historical data</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1833 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1835 ">eventTypes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1829 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1831 ">Type of event.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1833 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1835 ">If you filter by TFEVT, you receive a list of vehicles in traffic lanes.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1829 ">startTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1831 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1833 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1835 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1829 ">endTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1831 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1833 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1835 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Historical Data by Locations</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_vcw_fd1_cx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="30.508474576271187%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="69.49152542372882%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="30.508474576271187%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="69.49152542372882%">&lt;production url/v2/locations/events?eventTypes=TFEVT&amp;bbox={long,lat}&amp;locationType=TRAFFIC_LANE&amp;(startTime,endTime)</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="30.508474576271187%"><strong class="ph b">Sample Request URL</strong></td>
+<td class="entry" valign="top" width="69.49152542372882%">&lt;production url&gt;/v2/locations/events?eventTypes=TFEVT&amp;bbox=32.715675:-117.161230,32.708498:-117.151681&amp;locationType=TRAFFIC_LANE&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_bs1_kdb_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e1928">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e1930">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e1932">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e1934">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1928 ">bbox</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1930 ">The GPS-defined area containing the asset</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1932 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1934 ">For example, 32.715675:-117.161230,32.708498:-117.151681</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1928 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1930 ">Type of event.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1932 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1934 ">If you filter by TFEVT, you receive a list of vehicles in traffic lanes.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1928 ">startTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1930 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1932 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1934 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e1928 ">endTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e1930 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e1932 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e1934 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Historical Data by LocationUid</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_l2k_xg1_cx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="66.66666666666666%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="66.66666666666666%">&lt;production url&gt;/v2/locations/{locationUid}/events?eventTypes=TFEVT&amp;{startTime,endTime}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%"><strong class="ph b">Sample Request URL</strong></td>
+<td class="entry" valign="top" width="66.66666666666666%">&lt;production url&gt;/v2/locations/LOCATION-20-1037-1/events?eventTypes=TFEVT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_ipk_mdb_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e2019">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e2021">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e2023">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e2025">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2019 ">locationUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2021 ">GE identifier for the location.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2023 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2025 ">For example, LOCATION-20-1037-1</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2019 ">events?</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2021 ">Query for historical data</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2023 "> </td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2025 ">eventTypes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2019 ">eventTypes</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2021 ">Type of event.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2023 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2025 ">If you filter by TFEVT, you receive a list of vehicles in traffic lanes.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2019 ">startTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2021 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2023 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2025 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2019 ">endTime</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2021 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2023 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2025 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Response Parameters </h3>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="20%" id="d5272e2087">Parameter</th>
+<th class="entry" valign="top" width="14.482758620689657%" id="d5272e2089">Data Type</th>
+<th class="entry" valign="top" width="65.51724137931035%" id="d5272e2091">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="20%" headers="d5272e2087 "> locationUid</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d5272e2089 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d5272e2091 ">A unique identifier established by a customer or external resource to identify the lane number.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d5272e2087 "> assetUid</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d5272e2089 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d5272e2091 ">A unique identifier established by a customer or external resource for the asset recording the traffic flow.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d5272e2087 "> eventTypes</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d5272e2089 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d5272e2091 ">Identifies the TFEVT event type.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d5272e2087 "> timestamp</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d5272e2089 ">Number</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d5272e2091 ">Timestamp recorded in EPOCH format.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d5272e2087 "> properties</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d5272e2089 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d5272e2091 ">Vehicle properties being tracked by the asset.<dl class="dl"><dt class="dt dlterm">speedUnit</dt>
+<dd class="dd">Roadway speed limit. </dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">eventUid</dt>
+<dd class="dd">A unique identifier established by a customer or external resource for the traffic event. For example, a specific vehicle traversing a specific road segment.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">directionUnit</dt>
+<dd class="dd">By degree. </dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">vehicleType</dt>
+<dd class="dd">Car, truck, motorcycle, and so on.  (Not used in v2.)</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d5272e2087 "> measures</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d5272e2089 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d5272e2091 ">Vehicle properties being tracked by the device.<dl class="dl"><dt class="dt dlterm">direction</dt>
+<dd class="dd">value = from 0 to 360</dd>
+<dd class="dd">(See Degree Range diagram below)</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">speed</dt>
+<dd class="dd">value = 55, unit = mph</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">vehicleCount</dt>
+<dd class="dd">value = count, unit = number</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" colspan="3" valign="top" headers="d5272e2087 d5272e2089 d5272e2091 "><img class="image" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__image_e59f01e0-21b4-46ea-81f2-3bdf12536959" src="i_traffic_degrees.png"></img></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">Sample Response</h3>
+            
+            <pre class="pre codeblock">{
+  "content": [
+    {
+      "locationUid": "LOCATION-20-1037-1",
+      "assetUid": "CAMERA-HYP1037-CAM-F",
+      "eventTypes": "TFEVT",
+      "timestamp": 1473897233994,
+      "properties": {
+        "speedUnit": "MPH",
+        "eventUid": "Q0FNRVJBLUhZUDEwMzctQ0FNLUYsMTQ3Mzg5NzIzMzk5NA==",
+        "directionUnit": "DEGREE",
+        "vehicleType": "truck"
+      },
+      "measures": {
+        "direction": 263,
+        "speed": 5,
+        "vehicleCount": 24
+      }
+    }
+    </pre>
+
+        </div>
+</div>
+</div>
+<div class="topic reference nested1" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee"><h2 class="title topictitle2">Situational Awareness (Media)</h2>
+<div class="body refbody"><div class="section">
+      <p class="p">The Situational Awareness API returns a link from which you can view a video or image captured by an asset (camera).</p>
+
+    </div>
+<div class="section">
+      <div class="p">There are two ways to retrieve media on demand<ul class="ul" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__ul_iyk_lqv_qx"><li class="li">By AssetUid for Image or Video</li>
+<li class="li">By LocationUid for Image or Video</li>
+</ul>
+</div>
+
+      <div class="p">There are two ways to retrieve historical data:<ul class="ul" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__ul_ulr_pfb_cx"><li class="li">By AssetUid for Image or Video</li>
+<li class="li">By LocationUid for Image or Video</li>
+<li class="li">Retrieve Most Recent Historical Data for Image or Video</li>
+</ul>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Media on Demand by AssetUid for Image or Video</h3>
+      
+    </div>
+<div class="section">
+      <div class="p">When retrieving media on demand:<ol class="ol" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__ol_fv2_fs3_vx"><li class="li">Submit the HTTPS request.  You will receive an imagePollURL or videoPollURL.</li>
+<li class="li">Submit the imagePollURL or videoPollURL.<ul class="ul" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__ul_gct_ps3_vx"><li class="li">The message “Success” returns if the media file you requested is in the database.</li>
+<li class="li">If the requested file is not in the database, it will retrieve the file from the node (on-demand).<div class="note note"><span class="notetitle">Note:</span> The timestamp in the request needs to match, up to the millisecond.</div>
+</li>
+</ul>
+<ul class="ul" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__ul_rnw_t53_vx"><li class="li">The message "InProgress" returns if the media file is not in the database.  There is no timeout or error.  For now, the recommendation is the application be set to a timeout of five minutes, but the developer has the flexibility to choose whatever timeout period they want.<div class="note note"><span class="notetitle">Note:</span> Media is retained by the node for seven days.  If the requested media is older than seven days and is found in the cloud database, the PollURL returns the requested media. </div>
+</li>
+</ul>
+</li>
+</ol>
+
+      </div>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_whl_fnv_qx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25%">METHOD</td>
+<td class="entry" valign="top" width="75%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">URI</td>
+<td class="entry" valign="top" width="75%">{{mediaurl}}/ondemand/assets/{assetUid}/media?mediaType={mediaType1}&amp;timestamp={timestamp}&amp;page={int}&amp;size={int}&amp;sortBy={string}&amp;sortDir={string} </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">Sample Request URI</td>
+<td class="entry" valign="top" width="75%">{{mediaurl}}/ondemand/assets/CAMERA-STG-HYP1071-CAM-F/media?mediaType=VIDEO&amp;timestamp=1459816592758&amp;page=0&amp;size=100&amp;sortBy=mediaLogId&amp;sortDir=DESC </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_n15_xnv_qx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="13.88888888888889%" id="d5272e2289">Parameter</th>
+<th class="entry" valign="top" width="18.75%" id="d5272e2291">Description</th>
+<th class="entry" valign="top" width="13.88888888888889%" id="d5272e2293">Required?</th>
+<th class="entry" valign="top" width="53.47222222222222%" id="d5272e2295">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2289 ">assetUid</td>
+<td class="entry" valign="top" width="18.75%" headers="d5272e2291 ">GE identifier for the media device</td>
+<td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2293 "> </td>
+<td class="entry" valign="top" width="53.47222222222222%" headers="d5272e2295 ">Identifier such as CAMERA-STG-HYP1071-CAM-F</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2289 ">mediaType</td>
+<td class="entry" valign="top" width="18.75%" headers="d5272e2291 ">Filter by type of media. <div class="p">
+                  <div class="note note"><span class="notetitle">Note:</span> Get Media only works when you have access to Situational Awareness.</div>
+
+                </div>
+</td>
+<td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2293 ">No</td>
+<td class="entry" valign="top" width="53.47222222222222%" headers="d5272e2295 ">Insert one of the following enumeration codes for a specific media type.<dl class="dl"><dt class="dt dlterm">IMAGE</dt>
+<dd class="dd">If you filter by IMAGE, you receive a list of images in JPG, PNG, or GIF formats.</dd>
+<dd class="dd">Depending on the position of the camera, it will return the best resolution image available: either 320x240 for black and white or 1920x1080 for color.</dd>
+<dt class="dt dlterm">VIDEO</dt>
+<dd class="dd">If you filter by VIDEO, you receive a list of videos in H.264 format.</dd>
+<dd class="dd">By default, the video length is 1 minute. You can use VLC player to open the video.</dd>
+<dt class="dt dlterm">AUDIO</dt>
+<dd class="dd">If you filter by AUDIO, you receive a list of audio files in MP3 or WAV format.  This is not supported in v2.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">If you filtered by OTHERS, you receive a list of non-standard formats.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2289 ">timeStamp</td>
+<td class="entry" valign="top" width="18.75%" headers="d5272e2291 ">Time of the event, recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2293 "> </td>
+<td class="entry" valign="top" width="53.47222222222222%" headers="d5272e2295 ">Numerical value, such as 1453772603879.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2289 ">sortBy</td>
+<td class="entry" valign="top" width="18.75%" headers="d5272e2291 ">The value to sort the content of the response by.</td>
+<td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2293 ">No</td>
+<td class="entry" valign="top" width="53.47222222222222%" headers="d5272e2295 ">Insert one of the following codes for a response sorted by that value.<dl class="dl"><dt class="dt dlterm">mediaLogId</dt>
+<dd class="dd">The ID of each entry in the list.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaUUId</dt>
+<dd class="dd">The ID of the specific type of node.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaType</dt>
+<dd class="dd">Either video or image.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaFileName</dt>
+<dd class="dd">The filename of the captured media.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaTimestamp</dt>
+<dd class="dd">The time the media was captured from the node.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">assetUId</dt>
+<dd class="dd">The ID of the asset that captured the media.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">entryTimestamp</dt>
+<dd class="dd">The time the captured media was entered in the database.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2289 ">size</td>
+<td class="entry" valign="top" width="18.75%" headers="d5272e2291 ">Maximum number of records to return per page; if none specified, the default value of 2 is used automatically.</td>
+<td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2293 ">No</td>
+<td class="entry" valign="top" width="53.47222222222222%" headers="d5272e2295 ">Numerical value, such as 20.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2289 ">page</td>
+<td class="entry" valign="top" width="18.75%" headers="d5272e2291 ">Indicates the page number; default is 0. </td>
+<td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2293 ">No</td>
+<td class="entry" valign="top" width="53.47222222222222%" headers="d5272e2295 ">Numerical value, such as 1.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2289 ">sortDir</td>
+<td class="entry" valign="top" width="18.75%" headers="d5272e2291 ">Indicates whether to sort in ascending or descending order</td>
+<td class="entry" valign="top" width="13.88888888888889%" headers="d5272e2293 ">No</td>
+<td class="entry" valign="top" width="53.47222222222222%" headers="d5272e2295 ">Numerical value.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Media on Demand by LocationUid for Image or Video</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_qsn_2pv_qx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25%">METHOD</td>
+<td class="entry" valign="top" width="75%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">URI</td>
+<td class="entry" valign="top" width="75%">{{mediaurl}}/ondemand/location/{locationUid}/media?mediaType={mediaType1}&amp;timestamp={timestamp}&amp;page={int}&amp;size={int}&amp;sortBy={string}&amp;sortDir={string}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%">Sample Request URI</td>
+<td class="entry" valign="top" width="75%">{{mediaurl}}/ondemand/locations/LOCATION-STG-282/media?mediaType=IMAGE&amp;timestamp=1459816592756&amp;page=0&amp;size=100&amp;sortBy=mediaLogId&amp;sortDir=DESC</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_asm_lpv_qx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="16%" id="d5272e2471">Parameter</th>
+<th class="entry" valign="top" width="20%" id="d5272e2473">Description</th>
+<th class="entry" valign="top" width="16%" id="d5272e2475">Required?</th>
+<th class="entry" valign="top" width="48%" id="d5272e2477">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="16%" headers="d5272e2471 ">locationUid</td>
+<td class="entry" valign="top" width="20%" headers="d5272e2473 ">A unique identifier  established by a customer or external resource for a specific location within the monitored area</td>
+<td class="entry" valign="top" width="16%" headers="d5272e2475 "> </td>
+<td class="entry" valign="top" width="48%" headers="d5272e2477 ">Identifier such as LOCATION-STG-282.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="16%" headers="d5272e2471 ">mediaType</td>
+<td class="entry" valign="top" width="20%" headers="d5272e2473 ">Filter by type of media. <div class="p">
+                  <div class="note note"><span class="notetitle">Note:</span> Get Media only works when you have access to Situational Awareness.</div>
+
+                </div>
+</td>
+<td class="entry" valign="top" width="16%" headers="d5272e2475 ">No</td>
+<td class="entry" valign="top" width="48%" headers="d5272e2477 ">Insert one of the following enumeration codes for a specific media type.<dl class="dl"><dt class="dt dlterm">IMAGE</dt>
+<dd class="dd">If you filter by IMAGE, you receive a list of images in JPG, PNG, or GIF formats.</dd>
+<dd class="dd">Depending on the position of the camera, it will return the best resolution image available: either 320x240 for black and white or 1920x1080 for color.</dd>
+<dt class="dt dlterm">VIDEO</dt>
+<dd class="dd">If you filter by VIDEO, you receive a list of videos in H.264 format.</dd>
+<dd class="dd">By default, the video length is 1 minute. You can use VLC player to open the video.</dd>
+<dt class="dt dlterm">AUDIO</dt>
+<dd class="dd">If you filter by AUDIO, you receive a list of audio files in MP3 or WAV format.  This is not supported in v2.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">If you filtered by OTHERS, you receive a list of non-standard formats.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="16%" headers="d5272e2471 ">timeStamp</td>
+<td class="entry" valign="top" width="20%" headers="d5272e2473 ">Time of the event, recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="16%" headers="d5272e2475 "> </td>
+<td class="entry" valign="top" width="48%" headers="d5272e2477 ">Numerical value, such as 1453772603879.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="16%" headers="d5272e2471 ">sortBy</td>
+<td class="entry" valign="top" width="20%" headers="d5272e2473 ">The value to sort the content of the response by.</td>
+<td class="entry" valign="top" width="16%" headers="d5272e2475 ">No</td>
+<td class="entry" valign="top" width="48%" headers="d5272e2477 ">Insert one of the following codes for a response sorted by that value.<dl class="dl"><dt class="dt dlterm">mediaLogId</dt>
+<dd class="dd">The ID of each entry in the list.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaUUId</dt>
+<dd class="dd">The ID of the specific type of node.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaType</dt>
+<dd class="dd">Either video or image.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaFileName</dt>
+<dd class="dd">The filename of the captured media.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaTimestamp</dt>
+<dd class="dd">The time the media was captured from the node.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">assetUId</dt>
+<dd class="dd">The ID of the asset that captured the media.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">entryTimestamp</dt>
+<dd class="dd">The time the captured media was entered in the database.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="16%" headers="d5272e2471 ">size</td>
+<td class="entry" valign="top" width="20%" headers="d5272e2473 ">Maximum number of records to return per page; if none specified, the default value of 2 is used automatically.</td>
+<td class="entry" valign="top" width="16%" headers="d5272e2475 ">No</td>
+<td class="entry" valign="top" width="48%" headers="d5272e2477 ">Numerical value, such as 20.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="16%" headers="d5272e2471 ">page</td>
+<td class="entry" valign="top" width="20%" headers="d5272e2473 ">Indicates the page number; default is 0. </td>
+<td class="entry" valign="top" width="16%" headers="d5272e2475 ">No</td>
+<td class="entry" valign="top" width="48%" headers="d5272e2477 ">Numerical value, such as 1.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="16%" headers="d5272e2471 ">sortDir</td>
+<td class="entry" valign="top" width="20%" headers="d5272e2473 ">Indicates whether to sort in ascending or descending order</td>
+<td class="entry" valign="top" width="16%" headers="d5272e2475 ">No</td>
+<td class="entry" valign="top" width="48%" headers="d5272e2477 ">Numerical value.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Historical Data by AssetUid for Image or Video - Original </h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_nsk_s51_cx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="22.22222222222222%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="77.77777777777779%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="22.22222222222222%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="77.77777777777779%">&lt;production url&gt;/v2/mediastore/ondemand/assets/{assetUid}?mediaType={type}(timestamp,sort order,sort direction</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="22.22222222222222%"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry" valign="top" width="77.77777777777779%">&lt;production url&gt;/v2/mediastore/ondemand/assets/CAMERA-HYP1083-CAM-L?mediaType=IMAGE&amp;timestamp=1459816592756&amp;page=0&amp;size=100&amp;sortBy=mediaLogId&amp;sortDir=DESC</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Sample Response for On-Demand Image or Video</h3>
+      
+      <pre class="pre codeblock">
+{
+  "imagePollUrl": "https://ic-media-service.run.asv-pr.ice.predix.io/v2/mediastore/ondemand/getMedia/34bad361-d59a-47f1-aa59-be17e8bc643a?page=0&amp;size=100&amp;sortBy=mediaLogId&amp;sortDir=DESC"
+}
+</pre>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_kjs_ygb_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e2664">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e2666">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e2668">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e2670">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2664 ">assetUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2666 ">GE identifier for the media device.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2668 "> </td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2670 ">Identifier such as CAMERA-HYP1083-CAM-L</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2664 ">mediaType</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2666 ">Filter by type of media. <div class="p">
+                  <div class="note note"><span class="notetitle">Note:</span> Get Media only works when you have access to Situational Awareness.</div>
+
+                </div>
+</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2668 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2670 ">Insert one of the following enumeration codes for a specific media type.<dl class="dl"><dt class="dt dlterm">IMAGE</dt>
+<dd class="dd">If you filter by IMAGE, you receive a list of images in JPG, PNG, or GIF formats.</dd>
+<dd class="dd">Depending on the position of the camera, it will return the best resolution image available: either 320x240 for black and white or 1920x1080 for color.</dd>
+<dt class="dt dlterm">VIDEO</dt>
+<dd class="dd">If you filter by VIDEO, you receive a list of videos in H.264 format.</dd>
+<dd class="dd">By default, the video length is 1 minute. You can use VLC player to open the video.</dd>
+<dt class="dt dlterm">AUDIO</dt>
+<dd class="dd">If you filter by AUDIO, you receive a list of audio files in MP3 or WAV format.  This is not supported in v2.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">If you filtered by OTHERS, you receive a list of non-standard formats.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2664 ">timestamp</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2666 ">Time of the event, recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2668 "> </td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2670 ">Numerical value, such as 1453772603879.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2664 ">sortBy</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2666 ">The value to sort the content of the response by.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2668 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2670 ">Insert one of the following codes for a response sorted by that value.<dl class="dl"><dt class="dt dlterm">mediaLogId</dt>
+<dd class="dd">The ID of each entry in the list.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaUUId</dt>
+<dd class="dd">The ID of the specific type of node.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaType</dt>
+<dd class="dd">Either video or image.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaFileName</dt>
+<dd class="dd">The filename of the captured media.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaTimestamp</dt>
+<dd class="dd">The time the media was captured from the node.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">assetUId</dt>
+<dd class="dd">The ID of the asset that captured the media.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">entryTimestamp</dt>
+<dd class="dd">The time the captured media was entered in the database.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2664 ">sortDir</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2666 ">Indicates whether to sort in ascending or descending order</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2668 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2670 ">Numerical value.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Historical Data by LocationUid for Image or Video</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_uks_hv1_cx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="21.052631578947366%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="78.94736842105263%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="21.052631578947366%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="78.94736842105263%">&lt;production url&gt;/v2/mediastore/ondemand/locations/{locationUid}?mediaType={type}&amp;timestamp={time}&amp;&amp;sortBy={sortDir={Direction}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="21.052631578947366%"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry" valign="top" width="78.94736842105263%">&lt;production url&gt;/v2/mediastore/ondemand/locations/LOCATION-225?mediaType=IMAGE&amp;timestamp=1459816592756&amp;page=0&amp;size=100&amp;sortBy=mediaLogId&amp;sortDir=DESC</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_kk4_2hb_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d5272e2832">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d5272e2834">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d5272e2836">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d5272e2838">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2832 ">locationUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2834 ">A unique identifier established by a customer or external resource for a specific location within the monitored area.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2836 "> </td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2838 ">Value, such as LOCATION-225</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2832 ">mediaType</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2834 ">Filter by type of media. <div class="p">
+                  <div class="note note"><span class="notetitle">Note:</span> Get Media only works when you have access to Situational Awareness.</div>
+
+                </div>
+</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2836 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2838 ">Insert one of the following enumeration codes for a specific media type.<dl class="dl"><dt class="dt dlterm">IMAGE</dt>
+<dd class="dd">If you filter by IMAGE, you receive a list of images in JPG, PNG, or GIF formats.</dd>
+<dd class="dd">Depending on the position of the camera, it will return the best resolution image available: either 320x240 for black and white or 1920x1080 for color.</dd>
+<dt class="dt dlterm">VIDEO</dt>
+<dd class="dd">If you filter by VIDEO, you receive a list of videos in H.264 format.</dd>
+<dd class="dd">By default, the video length is 1 minute. You can use VLC player to open the video.</dd>
+<dt class="dt dlterm">AUDIO</dt>
+<dd class="dd">If you filter by AUDIO, you receive a list of audio files in MP3 or WAV format.  This is not supported in v2.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">If you filtered by OTHERS, you receive a list of non-standard formats.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2832 ">timestamp</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2834 ">Time of the event, recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2836 "> </td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2838 ">Numerical value, such as 1453772603879.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2832 ">sortBy</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2834 ">The selected value to sort the response by.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2836 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2838 ">Insert one of the following codes for a response sorted by that value.<dl class="dl"><dt class="dt dlterm">mediaLogId</dt>
+<dd class="dd">The ID of each entry in the list.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaUUId</dt>
+<dd class="dd">The ID of the specific type of node.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaType</dt>
+<dd class="dd">Either video or image.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaFileName</dt>
+<dd class="dd">The filename of the captured media.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaTimestamp</dt>
+<dd class="dd">The time the media was captured from the node.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">assetUId</dt>
+<dd class="dd">The ID of the asset that captured the media.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">entryTimestamp</dt>
+<dd class="dd">The time the captured media was entered in the database.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d5272e2832 ">sortDir</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d5272e2834 ">Indicates whether to sort in ascending or descending order</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d5272e2836 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d5272e2838 ">Numerical value.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Retrieve Most Recent Historical Data for Image or Video</h3>
+      
+    </div>
+<div class="section">
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_r1l_h42_px" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="21.052631578947366%" id="d5272e2970">METHOD</th>
+<th class="entry" valign="top" width="78.94736842105263%" id="d5272e2972">GET</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="21.052631578947366%" headers="d5272e2970 ">URI</td>
+<td class="entry" valign="top" width="78.94736842105263%" headers="d5272e2972 ">{{mediaurl}}/v2/mediastore/assets/{assetUid}/media/latest?mediaType=&lt;String&gt;</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="21.052631578947366%" headers="d5272e2970 ">Sample Request URI</td>
+<td class="entry" valign="top" width="78.94736842105263%" headers="d5272e2972 ">{{mediaurl}}/v2/mediastore/assets/CAMERA-STG-HYP1042-CAM-L/media/latest?mediaType=IMAGE</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_xj3_v42_px" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="19.59247648902821%" id="d5272e2999">Parameter</th>
+<th class="entry" valign="top" width="19.59247648902821%" id="d5272e3001">Description</th>
+<th class="entry" valign="top" width="15.673981191222571%" id="d5272e3003">Required</th>
+<th class="entry" valign="top" width="45.141065830721%" id="d5272e3005">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="19.59247648902821%" headers="d5272e2999 ">assetUid</td>
+<td class="entry" valign="top" width="19.59247648902821%" headers="d5272e3001 ">GE identifier for the media device.</td>
+<td class="entry" valign="top" width="15.673981191222571%" headers="d5272e3003 "> </td>
+<td class="entry" valign="top" width="45.141065830721%" headers="d5272e3005 ">Identifier such as CAMERA-HYP1083-CAM-L</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="19.59247648902821%" headers="d5272e2999 ">latest?</td>
+<td class="entry" valign="top" width="19.59247648902821%" headers="d5272e3001 ">Query for historical data</td>
+<td class="entry" valign="top" width="15.673981191222571%" headers="d5272e3003 "> </td>
+<td class="entry" valign="top" width="45.141065830721%" headers="d5272e3005 ">mediaType</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="19.59247648902821%" headers="d5272e2999 ">mediaType</td>
+<td class="entry" valign="top" width="19.59247648902821%" headers="d5272e3001 ">Filter by type of media. <div class="p">
+                  <div class="note note"><span class="notetitle">Note:</span> Get Media only works when you have access to Situational Awareness.</div>
+
+                </div>
+</td>
+<td class="entry" valign="top" width="15.673981191222571%" headers="d5272e3003 ">No</td>
+<td class="entry" valign="top" width="45.141065830721%" headers="d5272e3005 ">Insert one of the following enumeration codes for a specific media type.<dl class="dl"><dt class="dt dlterm">IMAGE</dt>
+<dd class="dd">If you filter by IMAGE, you receive a list of images in JPG, PNG, or GIF formats.</dd>
+<dd class="dd">Depending on the position of the camera, it will return the best resolution image available: either 320x240 for black and white or 1920x1080 for color.</dd>
+<dt class="dt dlterm">VIDEO</dt>
+<dd class="dd">If you filter by VIDEO, you receive a list of videos in H.264 format.</dd>
+<dd class="dd">By default, the video length is 1 minute. You can use VLC player to open the video.</dd>
+<dt class="dt dlterm">AUDIO</dt>
+<dd class="dd">If you filter by AUDIO, you receive a list of audio files in MP3 or WAV format.  This is not supported in v2.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">If you filtered by OTHERS, you receive a list of non-standard formats.</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Response Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_wqq_ghb_cx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="20%" id="d5272e3076">Parameter</th>
+<th class="entry" valign="top" width="14.482758620689657%" id="d5272e3078">Data Type</th>
+<th class="entry" valign="top" width="65.51724137931035%" id="d5272e3080">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="20%" headers="d5272e3076 ">status</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d5272e3078 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d5272e3080 ">The status of the response, either INPROGRESS or SUCCESS.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d5272e3076 ">listOfEntries</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d5272e3078 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d5272e3080 ">Each entry in the response will have these items shown in the sort order that was specified in the query.<dl class="dl"><dt class="dt dlterm">mediaLogId</dt>
+<dd class="dd">The ID of each entry in the list.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaUUId</dt>
+<dd class="dd">The ID of the specific type of node.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaType</dt>
+<dd class="dd">Either video or image.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaFileName</dt>
+<dd class="dd">The filename of the captured media.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">mediaTimestamp</dt>
+<dd class="dd">The time the media was captured from the node.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">assetUid</dt>
+<dd class="dd">The ID of the asset that captured the media.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">entryTimestamp</dt>
+<dd class="dd">The time the captured media was entered in the database.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d5272e3076 "> url</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d5272e3078 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d5272e3080 ">Link to the stored media file in its captured format (for example, JPEG, PNG, MP4, MP3).</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Sample Response for Retrieve Historical Media</h3>
+      
+      <pre class="pre codeblock">
+
+{
+  "status": "INPROGRESS",
+  "listOfEntires": null
+}
+
+{
+  "status": "SUCCESS",
+  "listOfEntires": {
+    "content": [
+      {
+        "mediaLogId": 13,
+        "mediaUUId": "GRC-NODE",
+        "mediaType": "IMAGE",
+        "mediaFileName": "CAMERA-HYP1083-CAM-L_CAMERA-HYP1083-CAM-L_1459816592756_IMAGE",
+        "mediaTimestamp": 1459816592756,
+        "assetUid": "CAMERA-HYP1083-CAM-L",
+        "externalRefId": "CAMERA-HYP1083-CAM-L",
+        "entryTimestamp": 1473294438424,
+        "url": "https://ic-media-service.run.asv-pr.ice.predix.io/v2/mediastore/file/CAMERA-HYP1083-CAM-L_CAMERA-HYP1083-CAM-L_1459816592756_IMAGE.jpg"
+      }
+    ],
+    "last": true,
+    "totalPages": 1,
+    "totalElements": 1,
+    "first": true,
+    "numberOfElements": 1,
+    "sort": [
+      {
+        "direction": "DESC",
+        "property": "mediaLogId",
+        "ignoreCase": false,
+        "nullHandling": "NATIVE",
+        "ascending": false
+      }
+    ],
+    "size": 100,
+    "number": 0
+  }
+}
+</pre>
+
+    </div>
+</div>
+</div>
+<div class="topic reference nested1" id="reference_jnl_n3f_lx"><h2 class="title topictitle2">WebSocket Information for Intelligent Cities APIs</h2>
+<div class="body refbody"><p class="shortdesc">Using WebSocket with the Intelligent Cities services: Parking Planning, Traffic Planning, and Pedestrian Planning API services  provides the ability to retrieve near-real-time data by assetUID, locations (bbox), or locationUID to obtain insight into the events collected by each service.</p>
+<div class="section"><h3 class="title sectiontitle">WebSocket Information</h3>
+            
+        </div>
+<div class="section">
+            <p class="p">To retrieve near real-time events, use the WebSocket protocol instead of HTTPS for streaming data. The streaming endpoint format is: wss://&lt;streaming url&gt;</p>
+
+            <div class="note note"><span class="notetitle">Note:</span> You need to send the bearer token and Predix-Zone-Id while establishing the socket connection.</div>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">By assetUid</h3>
+            <div class="p">WebSocket URL: "wss://&lt;production_url&gt;/events"<div class="note note"><span class="notetitle">Note:</span> Predix Tool Kit offers a <a class="xref" href="https://predix-toolkit.run.asv-pr.ice.predix.io/#!/apiHome" target="_blank">websocket client</a> that you can use for websocket calls.</div>
+</div>
+
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_jnl_n3f_lx__table_ytr_x4f_lx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%">Headers</td>
+<td class="entry" valign="top" width="50%">Request Payload</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%"><samp class="ph codeph">Authorization: Bearer &lt;token from trusted issuer&gt; Predix-Zone-Id: &lt;Predix-Zone-Id&gt; </samp></td>
+<td class="entry" valign="top" width="50%"><samp class="ph codeph">{"assetUid":"&lt;assetUid&gt;","eventTypes":["&lt;eventType1&gt;", "&lt;eventType2&gt;"]}</samp></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">By locations</h3>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_jnl_n3f_lx__table_ky2_rpf_lx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%">Headers</td>
+<td class="entry" valign="top" width="50%">Request Payload</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%"><samp class="ph codeph">Authorization: Bearer &lt;token from trusted issuer&gt; Predix-Zone-Id: &lt;Predix-Zone-Id&gt;</samp></td>
+<td class="entry" valign="top" width="50%"><samp class="ph codeph">{"bbox":"&lt;long,lat&gt;","eventTypes":["&lt;eventType1&gt;", "&lt;eventType2&gt;"]}</samp></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">By locationsUid</h3>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_jnl_n3f_lx__table_kgx_jqf_lx" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%">Headers</td>
+<td class="entry" valign="top" width="50%">Request Payload</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%"><samp class="ph codeph">Authorization: Bearer &lt;token from trusted issuer&gt; Predix-Zone-Id: &lt;Predix-Zone-Id&gt;</samp></td>
+<td class="entry" valign="top" width="50%"><samp class="ph codeph">{"locationUid":"&lt;locationUid&gt;","eventTypes":["&lt;eventType1&gt;", "&lt;eventType2&gt;"]} </samp></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+</div>
+</div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

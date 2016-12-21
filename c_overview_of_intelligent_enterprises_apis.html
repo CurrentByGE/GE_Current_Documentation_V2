@@ -1,0 +1,52 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Enterprise Environment Note: The Intelligent Enterprises APIs provide asset and location information, additional URI resources and data. Each API service is described below. Before using these APIs, ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="Intelligent Enterprises APIs Overview"></meta><meta name="DC.Relation" scheme="URI" content="r_enterprise_environment_api.html"></meta><meta name="DC.Relation" scheme="URI" content="r_indoor_positioning_api-1.html"></meta><meta name="DC.Creator" content="Ann Shogren"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_fe004da8-ced5-4762-8df6-14062d57ce34"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Intelligent Enterprises APIs Overview</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="concept_fe004da8-ced5-4762-8df6-14062d57ce34">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Intelligent Enterprises APIs Overview</h1>
+<div class="body conbody"><div class="section"><h2 class="title sectiontitle"><strong class="ph b">Enterprise Environment</strong>
+            </h2>
+            <div class="note note"><span class="notetitle">Note:</span> The Intelligent Enterprises APIs provide asset and location information, additional URI resources and data. Each API service is described below. Before using these APIs, start with the /assets or /locations endpoints described in the General APIs section.</div>
+
+            
+            <p class="p">The Enterprise Environment API provides indoor environment metadata collected continuously from sensors installed with  intelligent lighting fixtures in a building, including:</p>
+
+            <div class="p">
+                <ul class="ul" id="concept_fe004da8-ced5-4762-8df6-14062d57ce34__ul_d5e3b449-fc16-4911-ab14-cb2b5a4788b3"><li class="li"><strong class="ph b">Carbon Dioxide –</strong> measurement of carbon dioxide (CO₂) gas in parts-per-million (ppm), with a range from 0 ppm to 2000 ppm. This data can be used to monitor indoor air quality for occupant comfort, building HVAC system faults, and regulatory compliance. </li>
+<li class="li"><strong class="ph b">Humidity –</strong> measurement of relative humidity, expressed as a percentage (%). This data can be used to monitor the amount of water vapor in the air for occupant comfort, building HVAC system faults, and regulatory compliance.</li>
+<li class="li"><strong class="ph b">Illuminance – </strong>measurement of ambient light level in lux (lx), with a range from 0 lx to 3570 lx. This data can be used to maintain proper light levels for occupant comfort, reduce energy consumption when integrated with a daylight harvesting system, and monitor regulatory compliance.</li>
+<li class="li"><strong class="ph b">Occupancy – </strong>measurement of occupancy, expressed as a Boolean value of either 0 or 1 to indicate occupied (1) or unoccupied (0). There are no units for this value. This data can be used to control lights, integrate with other building systems controls, and monitor usage of space.</li>
+<li class="li"><strong class="ph b">Temperature – </strong>measurement of ambient temperature in degrees Celsius (°C), with a range from -273.15 °C to 327.67 °C. This data can be used to monitor facilities for occupant comfort, building HVAC system faults, and regulatory compliance.</li>
+</ul>
+
+            </div>
+
+            <p class="p">This data is collected, stored with a time stamp, and presented as historical information for an individual asset (e.g. sensor). You can use this information to analyze patterns and trends to discover insights for enterprise energy efficiency and operations optimization.</p>
+
+        </div>
+<div class="section">
+            <p class="p">See the service details for <a class="xref" href="r_enterprise_environment_api.html#reference_afb26548-4f98-4049-be05-dbac236cce51">Enterprise Environment</a> .</p>
+
+        </div>
+<div class="section"><strong class="ph b">Indoor Positioning</strong><p class="p">The Indoor Positioning API provides indoor position metadata collected from mobile devices running an application using the GE Indoor Positioning SDK. This application communicates with intelligent light fixtures enabled for indoor positioning applications in a building to determine the mobile device position. </p>
+<p class="p">Indoor positions are presented as Cartesian coordinates (X, Y, and Z), orientation angle, and duration in seconds. This data is collected, stored with a time stamp, and presented as historical information for an individual asset (e.g. mobile device). This information can be used to analyze the movement of visitor through a building space, including building zone dwell time and path analysis.</p>
+<p class="p">See the service details for <a class="xref" href="r_indoor_positioning_api-1.html#reference_afb26548-4f98-4049-be05-dbac236cce51">Indoor Positioning</a> .</p>
+</div>
+</div>
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="r_enterprise_environment_api.html">Enterprise Environment</a></strong><br xmlns="http://www.w3.org/1999/xhtml" />
+</li>
+<li class="link ulchildlink"><strong><a href="r_indoor_positioning_api-1.html">Indoor Positioning</a></strong><br xmlns="http://www.w3.org/1999/xhtml" />
+</li>
+</ul>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

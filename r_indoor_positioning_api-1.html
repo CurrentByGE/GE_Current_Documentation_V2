@@ -1,0 +1,255 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The Indoor Positioning API supports the following methods to access data: REST API Retrieve historical event data for an asset Retrieve historical event data for assets in a location Table 1. a – ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Indoor Positioning"></meta><meta name="DC.Relation" scheme="URI" content="c_overview_of_intelligent_enterprises_apis.html"></meta><meta name="DC.Creator" content="Ann Shogren"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_afb26548-4f98-4049-be05-dbac236cce51"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Indoor Positioning</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_afb26548-4f98-4049-be05-dbac236cce51">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="c_overview_of_intelligent_enterprises_apis.html" title="Intelligent Enterprises APIs Overview">Intelligent Enterprises APIs Overview</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="c_overview_of_intelligent_enterprises_apis.html" title="Intelligent Enterprises APIs Overview"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Intelligent Enterprises APIs Overview</span></a></span>  </div></td></tr></tbody></table>
+<h1 class="title topictitle1"><strong class="ph b">Indoor Positioning</strong></h1>
+<div class="body refbody"><div class="section">
+            <p class="p">The Indoor Positioning API supports the following methods to access data:</p>
+
+            <div class="p">
+                <ol class="ol" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ol_13358162-ec55-4202-8e5e-8fa05dc4ddbe"><li class="li">
+                        <strong class="ph b">REST API</strong><ol class="ol" type="a" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ol_e878dc2c-0eb1-4e09-962a-5ff0bd22ab54"><li class="li">Retrieve historical event data for an asset</li>
+<li class="li">Retrieve historical event data for assets in a location</li>
+</ol>
+</li>
+</ol>
+
+            </div>
+
+        </div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_afb26548-4f98-4049-be05-dbac236cce51__table_9c88d697-52ab-4ab8-b7ca-6f5e895f73d1" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. <strong class="ph b">a – Retrieve historical event data for an asset</strong></span></caption><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="26.666666666666668%"><strong class="ph b">Method</strong></td>
+<td class="entry" valign="top" width="73.33333333333333%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="26.666666666666668%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="73.33333333333333%">
+                            <p class="p">&lt;production url&gt;/enterprise/environment/assets/&lt;assetUid&gt;/ latestEvent?eventType=IPS_EVENT&amp;startTime=1480928400000&amp;endTime=1481007600000</p>
+
+                        </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="26.666666666666668%"><strong class="ph b">SAMPLE URI</strong></td>
+<td class="entry" valign="top" width="73.33333333333333%">
+                            <p class="p">&lt;production url&gt;/enterprise/environment/assets/Sensor1_150_200/</p>
+
+                            <p class="p">latestEvent?eventType=IPS_EVENT&amp;startTime=1480928400000&amp;endTime=1481007600000</p>
+
+                        </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 2. Query Parameters</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="25%" id="d24685e77">Parameter</th>
+<th class="entry" valign="top" width="25%" id="d24685e79">Description</th>
+<th class="entry" valign="top" width="25%" id="d24685e81">Required?</th>
+<th class="entry" valign="top" width="25%" id="d24685e83">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25%" headers="d24685e77 ">assetUid</td>
+<td class="entry" valign="top" width="25%" headers="d24685e79 ">GE Identifier for a mobile device</td>
+<td class="entry" valign="top" width="25%" headers="d24685e81 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d24685e83 ">7599CC8E-4C52-44E7-99B8-14ABF3101D3D</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d24685e77 ">event?</td>
+<td class="entry" valign="top" width="25%" headers="d24685e79 ">Query for near real-time event data</td>
+<td class="entry" valign="top" width="25%" headers="d24685e81 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d24685e83 ">
+                            <p class="p">eventType</p>
+
+                        </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d24685e77 ">eventType</td>
+<td class="entry" valign="top" width="25%" headers="d24685e79 ">
+                            <p class="p">Filter for environment event</p>
+
+                        </td>
+<td class="entry" valign="top" width="25%" headers="d24685e81 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d24685e83 ">
+                            <div class="p">Insert the following enumeration codes to receive indoor position data:<ul class="ul" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ul_401d305d-ccd1-4e8b-9641-02596466b5b2"><li class="li">IPS_EVENT  – Indoor Position data </li>
+</ul>
+</div>
+
+                        </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d24685e77 ">startTime</td>
+<td class="entry" valign="top" width="25%" headers="d24685e79 ">Start time (timestamp) recorded in EPOCH format (milliseconds).</td>
+<td class="entry" valign="top" width="25%" headers="d24685e81 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d24685e83 ">Numerical value, such as1453766605577.<div class="note note"><span class="notetitle">Note:</span>  If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d24685e77 ">endTime</td>
+<td class="entry" valign="top" width="25%" headers="d24685e79 ">Start time (timestamp) recorded in EPOCH format (milliseconds).</td>
+<td class="entry" valign="top" width="25%" headers="d24685e81 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d24685e83 "><p class="p">Numerical value, such as</p>
+ 1453766605577.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 3. b – Retrieve historical event data for assets in a location</span></caption><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="19.120458891013385%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="80.87954110898661%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="19.120458891013385%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="80.87954110898661%">&lt;production url&gt;/enterprise/environment/locations/&lt;locationUid&gt;/ <p class="p">events?eventType=IPS_EVENT&amp;startTime=1480928400000&amp;endTime=1481007600000</p>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="19.120458891013385%"><strong class="ph b">Sample URI</strong></td>
+<td class="entry" valign="top" width="80.87954110898661%">
+                            <p class="p">&lt;production url&gt;/enterprise/environment/locations/ENT_LAYOUT_qagkvg3mn/</p>
+
+                            <p class="p">events?eventType=IPS_EVENT&amp;startTime=1480928400000&amp;endTime=1481007600000</p>
+
+                        </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 4. Query Parameters</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="25%" id="d24685e192">Parameter</th>
+<th class="entry" valign="top" width="25%" id="d24685e194">Description</th>
+<th class="entry" valign="top" width="25%" id="d24685e196">Required?</th>
+<th class="entry" valign="top" width="25%" id="d24685e198">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25%" headers="d24685e192 ">locationUid</td>
+<td class="entry" valign="top" width="25%" headers="d24685e194 ">GE Identifier for a location</td>
+<td class="entry" valign="top" width="25%" headers="d24685e196 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d24685e198 ">Value such as "ENT_LAYOUT_qagkvg3mn".</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d24685e192 ">latestEvent?</td>
+<td class="entry" valign="top" width="25%" headers="d24685e194 ">Query for near real-time event data</td>
+<td class="entry" valign="top" width="25%" headers="d24685e196 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d24685e198 ">eventType</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d24685e192 ">eventType</td>
+<td class="entry" valign="top" width="25%" headers="d24685e194 ">
+                            <p class="p">Filter for environment event</p>
+
+                        </td>
+<td class="entry" valign="top" width="25%" headers="d24685e196 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d24685e198 ">Insert the following enumeration codes to receive indoor position data:<ul class="ul" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ul_3896b6a9-6219-4889-b8f9-9391a3b87570"><li class="li">IPS_EVENT - Indoor Position data </li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d24685e192 ">startTime</td>
+<td class="entry" valign="top" width="25%" headers="d24685e194 ">Start time (timestamp) recorded in EPOCH format (milliseconds).</td>
+<td class="entry" valign="top" width="25%" headers="d24685e196 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d24685e198 "><p class="p">Numerical value, such as</p>
+ 1453766605577. <div class="note note"><span class="notetitle">Note:</span>  If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d24685e192 ">endTime</td>
+<td class="entry" valign="top" width="25%" headers="d24685e194 ">Start time (timestamp) recorded in EPOCH format (milliseconds).</td>
+<td class="entry" valign="top" width="25%" headers="d24685e196 ">Yes</td>
+<td class="entry" valign="top" width="25%" headers="d24685e198 "><p class="p">Numerical value, such as</p>
+ 1453766605577.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_afb26548-4f98-4049-be05-dbac236cce51__table_7db06879-70f6-4c7a-91aa-9e0682b74110" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 5. JSON Response Parameters</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d24685e269">Parameter</th>
+<th class="entry" valign="top" width="32.362459546925564%" id="d24685e271">Data Type</th>
+<th class="entry" valign="top" width="34.3042071197411%" id="d24685e273">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">locationUid</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">String</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">Unique, customer-defined identifier for a specific location.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">assetUid</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">String</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">The customer-defined identifier for a specific asset.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">eventType</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">String</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">Identifies this type of event: <ul class="ul" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ul_d9261e74-5ce8-4969-aa45-0220e4f525a5"><li class="li">CO2 – Carbon dioxide measurement data</li>
+<li class="li"> HUMIDITY – Relative humidity measurement data</li>
+<li class="li">LIGHT_LEVEL – Ambient light measurement data</li>
+<li class="li">OCCUPANCY – Occupancy measurement data </li>
+<li class="li">TEMP – Ambient temperature data</li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">timestamp</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">Number</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">Actual timestamp when event occurred. Timestamps are in EPOCH format (milliseconds).</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">properties</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">N/A</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">Custom properties captured for this event type.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">...sessionId</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">N/A</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">Unique system-defined identifier for indoor position session.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">...userType</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">N/A</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">Customer-defined type for device user.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">Measures</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">N/A</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">Event type measurement data</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">...deviceId</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">N/A</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">Unique system-defined identifier for mobile device.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">...durationInSec</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">N/A</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">Dwell time at position (seconds) </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">...orientation</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">N/A</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">Angle direction (degrees)</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">...x</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">N/A</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">x coordinate (meters)</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">...y</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">N/A</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">y coordinate (meters)</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d24685e269 ">...z</td>
+<td class="entry" valign="top" width="32.362459546925564%" headers="d24685e271 ">N/A</td>
+<td class="entry" valign="top" width="34.3042071197411%" headers="d24685e273 ">z coordinate (meters)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section"><h2 class="title sectiontitle">Sample Response </h2>
+            
+            <pre class="pre codeblock">{
+	"content": [
+{
+		"locationUid": "ENT_LAYOUT_qagkvg3mn",
+		"assetUid": null,
+		"eventType": "IPS_EVENT",
+		"timestamp": 1480934319876,
+		"properties": {
+			"sessionId": "ZF490XLLH3HV36D6YPOUKPAE",
+			"userType": "CUSTOMER",
+			"deviceId": "7599CC8E-4C52-44E7-99B8-14ABF3101D3D",
+			"sourceType": "VLC"
+		}
+	}
+]
+}</pre>
+
+        </div>
+</div>
+<div class="related-links"></div>
+<div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="c_overview_of_intelligent_enterprises_apis.html" title="Intelligent Enterprises APIs Overview"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Intelligent Enterprises APIs Overview</span></a></span>  </div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>
