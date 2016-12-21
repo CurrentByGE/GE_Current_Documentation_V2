@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA 1.2 Map//EN" "map.dtd" [
-]>
-<map id="IMjM1NzA4MzktYmE3ZC00YTRhLWExNDQtOWI1OGZiM2QzOTQ4" chunk="to-content"><title>General APIs</title><topicref href="c_overview_of_general_apis.dita"></topicref><topicref href="c_simulated_stream_info_for_each_API.dita"></topicref><topicref href="r_get_list_of_assets_api.dita"></topicref><topicref href="r_get_asset_details_api.dita"></topicref><topicref href="r_get_list_of_locations_api.dita"></topicref><topicref href="r_get_location_details.dita"></topicref></map>

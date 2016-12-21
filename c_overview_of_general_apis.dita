@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA 1.2 Concept//EN" "concept.dtd" [
-]>
-<concept id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44"><title>General APIs Overview</title><prolog><author>Linda Castellani</author></prolog><conbody><p>The APIs in this section provide location and resource information for assets used to monitor parking occupation, pedestrian movements, situational awareness, and traffic flow for Cities; and environmental factors, such as CO2, humidity, illuminance, occupancy, and temperature, and indoor positioning information for Enterprises.</p><p>Each general API provides additional data in the response details. You need to run one or more of the APIs in this section before using the Intelligent Cities and Intelligent Enterprises APIs, which match the use cases. Each use case is described in its individual subsection.</p><p>
-            <note>Timestamp values use UTC, not local time.</note>
-        </p></conbody></concept>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA 1.2 Concept//EN" "concept.dtd" [
-]>
-<concept id="concept_f0d490bc-3aeb-486a-90b4-d0741ac32d64"><title>API Methods</title><prolog><author>Linda Castellani</author></prolog><conbody><p>The Intelligent Environment service APIs use GET and POST methods.<table id="table_3f11be7d-3ed9-4a15-a18e-9a98bc161cc1" frame="all" rowsep="1" colsep="1"><tgroup cols="2"><colspec colwidth="1*" colnum="1" colname="c1"/><colspec colwidth="3*" colnum="2" colname="c2"/><thead><row><entry>Method</entry><entry>Usage</entry></row></thead><tbody><row><entry>GET</entry><entry>Retrieves a resource.</entry></row><row><entry>POST</entry><entry>Creates a resource.</entry></row></tbody></tgroup></table></p></conbody></concept>

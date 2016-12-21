@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA 1.2 Map//EN" "map.dtd" [
-]>
-<map id="IMTFiMWY3NzQtYjRiNS00ODBmLWI0NjctYTc2YmUyMzQ0ZDI0" chunk="to-content"><title>Intelligent Cities APIs</title><topicref href="c_overview_of_intelligent_cities_apis.dita"></topicref><topicref href="r_get_parking_planning_api.dita"></topicref><topicref href="r_get_pedestrian_planning.dita"></topicref><topicref href="r_get_traffic_planning_api.dita"></topicref><topicref href="r_get_situational_awareness_media_api.dita"></topicref><topicref href="r_intelligent_cities_appendix_a.dita"></topicref></map>
