@@ -1,0 +1,816 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The APIs in this section provide location and resource information for assets used to monitor parking occupation, pedestrian movements, situational awareness, and traffic flow for Cities; and ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="General APIs"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>General APIs</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<div class="nested0" id="topic"><h1 class="title topictitle1">General APIs</h1>
+<div class="topic concept nested1" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44"><h2 class="title topictitle2">General APIs Overview</h2>
+<div class="body conbody"><p class="p">The APIs in this section provide location and resource information for assets used to monitor parking occupation, pedestrian movements, situational awareness, and traffic flow for Cities; and environmental factors, such as CO2, humidity, illuminance, occupancy, and temperature, and indoor positioning information for Enterprises.</p>
+<p class="p">Each general API provides additional data in the response details. You need to run one or more of the APIs in this section before using the Intelligent Cities and Intelligent Enterprises APIs, which match the use cases. Each use case is described in its individual subsection.</p>
+<div class="p">
+            <div class="note note"><span class="notetitle">Note:</span> Timestamp values use UTC, not local time.</div>
+
+        </div>
+</div>
+</div>
+<div class="topic concept nested1" id="concept_oxt_4xm_nx"><h2 class="title topictitle2">Simulated Data Stream Information for Each API</h2>
+<div class="body conbody"><p class="shortdesc">Each of the APIs are connected to a JAVA app simulator, which simulates city and enterprises data that mimics data from the node.</p>
+<div class="p"> GE Current recommends using the APIs to gather data and run the JAVA app simulator prior to using real data (simulated data is included in the product; real data is via permission). In order to retrieve the simulated data, use the following parameters:
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="concept_oxt_4xm_nx__table_ew5_sxm_nx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="20%" id="d1442e47">Simulated Data Stream</th>
+<th class="entry" valign="top" width="45%" id="d1442e49">Bounding Box / Location</th>
+<th class="entry" valign="top" width="35%" id="d1442e51">Range and Frequency</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e47 ">PEDESTRIAN</td>
+<td class="entry" valign="top" width="45%" headers="d1442e49 ">32.715675:-117.161230,32.708498:-117.151681 </td>
+<td class="entry" valign="top" width="35%" headers="d1442e51 ">
+                                <ul class="ul" id="concept_oxt_4xm_nx__ul_lk5_szm_nx"><li class="li">Streaming message intervals are between 15 to 25 seconds. </li>
+<li class="li">Simulated data started on November 15, 2016 (1479198600). </li>
+<li class="li">Estimate 500 messages per node per day.</li>
+<li class="li">43 nodes</li>
+</ul>
+
+                            </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e47 ">TRAFFIC</td>
+<td class="entry" valign="top" width="45%" headers="d1442e49 ">32.715675:-117.161230,32.708498:-117.151681 </td>
+<td class="entry" valign="top" width="35%" headers="d1442e51 ">
+                                <ul class="ul" id="concept_oxt_4xm_nx__ul_sz1_wzm_nx"><li class="li">Streaming message intervals are between 5 to 40 seconds. </li>
+<li class="li">Simulated data started on November 15, 2016 (1479198600).</li>
+<li class="li">Estimate 3400 messages per node per day.</li>
+<li class="li">43 nodes</li>
+</ul>
+
+                            </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e47 ">PARKING</td>
+<td class="entry" valign="top" width="45%" headers="d1442e49 ">32.715675:-117.161230,32.708498:-117.151681 </td>
+<td class="entry" valign="top" width="35%" headers="d1442e51 ">
+                                <ul class="ul" id="concept_oxt_4xm_nx__ul_rvx_zzm_nx"><li class="li">Car In and Car Out range between 1 to 15 minutes.</li>
+<li class="li">Simulated data started on November 15, 2016 (1479198600).</li>
+<li class="li">Estimate about 70 messages per node per day.</li>
+<li class="li">43 nodes</li>
+</ul>
+
+                            </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e47 ">MEDIA</td>
+<td class="entry" valign="top" width="45%" headers="d1442e49 ">32.715675:-117.161230,32.708498:-117.151681 </td>
+<td class="entry" valign="top" width="35%" headers="d1442e51 ">
+                                <ul class="ul" id="concept_oxt_4xm_nx__ul_mmk_c1n_nx"><li class="li">This API request supports IMAGE, VIDEO, or AUDIO.</li>
+<li class="li">Simulated data started on November 15, 2016 (1479198600). </li>
+<li class="li">43 nodes.</li>
+</ul>
+
+                            </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e47 ">INDOOR POSITIONING</td>
+<td class="entry" valign="top" width="45%" headers="d1442e49 ">Location UID</td>
+<td class="entry" valign="top" width="35%" headers="d1442e51 ">VLC coordinates are generated between 8 AM – 6 PM UTC every day. Therefore, all the analytics work during this time range.<p class="p">Simulated data is kept up to 1 week.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e47 ">ENVIRONMENTAL<ul class="ul" id="concept_oxt_4xm_nx__ul_e53f13ab-b897-4bc2-8b12-b36fb1ca9087"><li class="li">Carbon Dioxide</li>
+<li class="li">Humidity</li>
+<li class="li">Light Level</li>
+<li class="li">Occupancy</li>
+<li class="li">Temperature</li>
+</ul>
+</td>
+<td class="entry" valign="top" width="45%" headers="d1442e49 ">Location UID</td>
+<td class="entry" valign="top" width="35%" headers="d1442e51 ">Sensors generate an Occupancy event every 1 minute, if there is occupancy.<p class="p">Sensors generate Temperature and Light Level events every 15 minutes.</p>
+<p class="p">Simulated data is kept up to 1 week.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="topic reference nested1" id="reference_6ccef033-1155-40ae-a3b0-ca7ee7fab91c"><h2 class="title topictitle2">Get List of Assets</h2>
+<div class="body refbody"><div class="section">
+            <p class="p">This API returns a list of assets deployed within a bounding box (bbox) that you define with GPS coordinates.</p>
+
+        </div>
+<div class="section">
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6ccef033-1155-40ae-a3b0-ca7ee7fab91c__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Request URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">{{metadataurl}}/v2/assets/search?bbox=&lt;long,lat&gt;&amp;page=&lt;int&gt;&amp;size=&lt;int&gt;&amp;q=assetType:&lt;assetType1&gt;&amp;eventType=&lt;eventType1&gt;&amp;mediaType=&lt;mediaType1&gt;</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">{{metadataurl}}/assets/search?bbox=32.715675:-117.161230,32.708498:-117.151681&amp;page=0&amp;size=50&amp;q=assetType:CAMERA&amp;eventType=PKIN</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6ccef033-1155-40ae-a3b0-ca7ee7fab91c__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="12.341407151095733%" id="d1442e206">Parameter</th>
+<th class="entry" valign="top" width="37.60092272202999%" id="d1442e208">Description</th>
+<th class="entry" valign="top" width="11.534025374855824%" id="d1442e210">Required?</th>
+<th class="entry" valign="top" width="38.523644752018456%" id="d1442e212">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="12.341407151095733%" headers="d1442e206 ">bbox</td>
+<td class="entry" valign="top" width="37.60092272202999%" headers="d1442e208 ">The bounded area for your search, identified by GPS coordinates.</td>
+<td class="entry" valign="top" width="11.534025374855824%" headers="d1442e210 ">Cities: Yes<p class="p">Enterprises: No</p>
+</td>
+<td class="entry" valign="top" width="38.523644752018456%" headers="d1442e212 "><strong class="ph b">bbox=x1:y1, x2:y2 </strong><p class="p">Replace x1:y1, x2:y2 with GPS coordinates, similar to the following:</p>
+<p class="p">32.715675:-117.161230,32.708498:-117.151681</p>
+<p class="p">You can use Google Maps to obtain the latitude and longitude. To locate GPS coordinates for the area and identify the boundaries, place the cursor in the upper left location of the area, then right-click and select <strong class="ph b">What’s here?</strong> to obtain the first set of coordinates. Right-click on the lower-right location and repeat this procedure to obtain the second set of coordinates.</p>
+<p class="p"><img class="image" id="reference_6ccef033-1155-40ae-a3b0-ca7ee7fab91c__image_f49ab071-eb85-451c-b7a3-2469856537cc" src="i_bbox_graphic_small.png"></img></p>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="12.341407151095733%" headers="d1442e206 ">q</td>
+<td class="entry" valign="top" width="37.60092272202999%" headers="d1442e208 ">Identifies a "type" query.</td>
+<td class="entry" valign="top" width="11.534025374855824%" headers="d1442e210 ">No</td>
+<td class="entry" valign="top" width="38.523644752018456%" headers="d1442e212 ">Query to search by assetType, mediaType, or eventTypes.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="12.341407151095733%" headers="d1442e206 ">assetType</td>
+<td class="entry" valign="top" width="37.60092272202999%" headers="d1442e208 ">Filter by type of asset.<div class="note note"><span class="notetitle">Note:</span> CAMERA is the only sensor that will generate eventType and mediaType. </div>
+</td>
+<td class="entry" valign="top" width="11.534025374855824%" headers="d1442e210 ">No</td>
+<td class="entry" valign="top" width="38.523644752018456%" headers="d1442e212 ">Insert one of the following enumeration codes to filter by a specific asset type.<dl class="dl"><dt class="dt dlterm">NODE</dt>
+<dd class="dd">Parent asset. </dd>
+<dd class="dd">When you filter by NODE and a bounding box, you receive a list of devices attached to each node within the boundaries, such as a camera or microphone.</dd>
+<dt class="dt dlterm">CAMERA</dt>
+<dd class="dd">If you filter by CAMERA, you receive a list of all cameras installed within the bounding box.</dd>
+<dt class="dt dlterm">MIC</dt>
+<dd class="dd">If you filter by MIC, you receive a list of all audio devices installed within the boundaries.</dd>
+<dt class="dt dlterm">ENV</dt>
+<dd class="dd">If you filter by ENV, you receive a list of all environmental sensors installed within the boundaries.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">If you filter by OTHERS, you receive a list of non-standard or unknown devices.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="12.341407151095733%" headers="d1442e206 ">mediaType</td>
+<td class="entry" valign="top" width="37.60092272202999%" headers="d1442e208 ">Filter by type of media. <div class="p">
+                  <div class="note note"><span class="notetitle">Note:</span> Get Media only works when you have access to Situational Awareness.</div>
+
+                </div>
+</td>
+<td class="entry" valign="top" width="11.534025374855824%" headers="d1442e210 ">No</td>
+<td class="entry" valign="top" width="38.523644752018456%" headers="d1442e212 ">Insert one of the following enumeration codes for a specific media type.<dl class="dl"><dt class="dt dlterm">IMAGE</dt>
+<dd class="dd">If you filter by IMAGE, you receive a list of images in JPG, PNG, or GIF formats.</dd>
+<dd class="dd">Depending on the position of the camera, it will return the best resolution image available: either 320x240 for black and white or 1920x1080 for color.</dd>
+<dt class="dt dlterm">VIDEO</dt>
+<dd class="dd">If you filter by VIDEO, you receive a list of videos in H.264 format.</dd>
+<dd class="dd">By default, the video length is 1 minute. You can use VLC player to open the video.</dd>
+<dt class="dt dlterm">AUDIO</dt>
+<dd class="dd">If you filter by AUDIO, you receive a list of audio files in MP3 or WAV format.  This is not supported in v2.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">If you filtered by OTHERS, you receive a list of non-standard formats.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="12.341407151095733%" headers="d1442e206 ">eventTypes</td>
+<td class="entry" valign="top" width="37.60092272202999%" headers="d1442e208 ">Filter by type of event.</td>
+<td class="entry" valign="top" width="11.534025374855824%" headers="d1442e210 ">No</td>
+<td class="entry" valign="top" width="38.523644752018456%" headers="d1442e212 ">Insert one of the following enumeration codes for a specific event type.<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">If you filter by PKIN, you receive a list of vehicles (identified by object-id) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">If you filter by PKOUT you receive a list of vehicles (identified by object-id) exiting parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PEDEVT</dt>
+<dd class="dd">If you filter by PEDEVT, you receive a list of pedestrians (identified by object-id) exiting monitored areas with within the boundaries.</dd>
+<dt class="dt dlterm">TFEVT</dt>
+<dd class="dd">If you filter by TFEVT, you receive a list of traffic flow data.</dd>
+<dt class="dt dlterm">ENCHG</dt>
+<dd class="dd">If you filter by ENCHG, you receive a list of changed environmental conditions, such as temperature.</dd>
+<dt class="dt dlterm">LIGHT_LEVEL</dt>
+<dd class="dd">If you filter by LIGHT_LEVEL, you receive a list of assets that report illuminance sensor events within the specified bounded area.</dd>
+<dt class="dt dlterm">OCCUPANCY</dt>
+<dd class="dd">If you filter by OCCUPANCY, you receive a list of assets that report occupancy sensor events within the specified bounded area.</dd>
+<dt class="dt dlterm">TEMP</dt>
+<dd class="dd">If you filter by TEMP, you receive a list of assets that report temperature sensor events within the specified bounded area.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="12.341407151095733%" headers="d1442e206 ">size</td>
+<td class="entry" valign="top" width="37.60092272202999%" headers="d1442e208 ">Maximum number of records to return per page; if none specified, the default value of 2 is used automatically.</td>
+<td class="entry" valign="top" width="11.534025374855824%" headers="d1442e210 ">No</td>
+<td class="entry" valign="top" width="38.523644752018456%" headers="d1442e212 ">Numerical value, such as 20.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="12.341407151095733%" headers="d1442e206 ">page</td>
+<td class="entry" valign="top" width="37.60092272202999%" headers="d1442e208 ">Indicates the page number; default is 0. </td>
+<td class="entry" valign="top" width="11.534025374855824%" headers="d1442e210 ">No</td>
+<td class="entry" valign="top" width="38.523644752018456%" headers="d1442e212 ">Numerical value, such as 1.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">Response Parameters</h3>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6ccef033-1155-40ae-a3b0-ca7ee7fab91c__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="20%" id="d1442e406">Parameter</th>
+<th class="entry" valign="top" width="14.482758620689657%" id="d1442e408">Data Type</th>
+<th class="entry" valign="top" width="65.51724137931035%" id="d1442e410">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e406 "><span class="keyword parmname">assetUid</span></td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e408 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e410 ">A unique identifier established by a customer or external resource. For example, CAMERA-STG-HYP1042-CAM-L to identify a camera.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e406 "><span class="keyword parmname">parentAssetUid</span></td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e408 ">string</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e410 ">A unique identifier assigned to the asset at the top of a hierarchical set of assets, in other words, the parent of a child asset. For example, a node is a parent asset, comprising child assets such as cameras or microphones.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e406 "><span class="keyword parmname">eventTypes</span></td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e408 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e410 ">The event type that was recorded. In the sample response data, the camera on the specified node is collecting data on parking instances (vehicle in, vehicle out) and traffic flow in the parking area.<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">If you filtered by PKIN, you receive a list of vehicles (identified by object-id) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">If you filtered by PKOUT you receive a list of vehicles (identified by object-id) exiting parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PEDEVT</dt>
+<dd class="dd">If you filtered by PEDEVT, you receive a list of pedestrians (identified by object-id) exiting monitored areas with within the boundaries.</dd>
+<dt class="dt dlterm">TFEVT</dt>
+<dd class="dd">If you filtered by TFEVT, you receive a list of traffic flow information.</dd>
+<dt class="dt dlterm">ENCHG</dt>
+<dd class="dd">If you filter by ENCHG, you receive a list of changed environmental conditions, such as temperature.</dd>
+<dt class="dt dlterm">LIGHT_LEVEL</dt>
+<dd class="dd">If you filtered by LIGHT_LEVEL, you receive a list of assets that report illuminance sensor events within the specified bounded area.</dd>
+<dt class="dt dlterm">OCCUPANCY</dt>
+<dd class="dd">If you filtered by OCCUPANCY, you receive a list of assets that report occupancy sensor events within the specified bounded area.</dd>
+<dt class="dt dlterm">TEMP</dt>
+<dd class="dd">If you filtered by TEMP, you receive a list of assets that report temperature sensor events within the specified bounded area.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e406 "><span class="keyword parmname">mediaType</span></td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e408 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e410 ">Media output. In the sample response data, the camera on the specified node is collecting video to record when vehicles enter and exit a parking space.<dl class="dl"><dt class="dt dlterm">IMAGE</dt>
+<dd class="dd">If you filter by IMAGE, you receive a list of images in JPG, PNG, or GIF formats.</dd>
+<dd class="dd">Depending on the position of the camera, it will return the best resolution image available: either 320x240 for black and white or 1920x1080 for color.</dd>
+<dt class="dt dlterm">VIDEO</dt>
+<dd class="dd">If you filter by VIDEO, you receive a list of videos in H.264 format.</dd>
+<dd class="dd">By default, the video length is 1 minute. You can use VLC player to open the video.</dd>
+<dt class="dt dlterm">AUDIO</dt>
+<dd class="dd">If you filtered by AUDIO, you receive a list of audio files in MP3 or WAV format.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">If you filtered by OTHERS, you receive a list of non-standard formats.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e406 "><span class="keyword parmname">assetType</span></td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e408 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e410 ">Type of asset that is recording the events.<dl class="dl"><dt class="dt dlterm">NODE</dt>
+<dd class="dd">Parent asset.</dd>
+<dt class="dt dlterm">CAMERA</dt>
+<dd class="dd">If you filtered by CAMERA, you receive a list of all cameras installed within the bounding box.</dd>
+<dt class="dt dlterm">MIC</dt>
+<dd class="dd">If you filtered by MIC, you receive a list of all audio devices installed within the boundaries.</dd>
+<dt class="dt dlterm">ENV</dt>
+<dd class="dd">If you filtered by ENV, you receive a list of all environmental sensors installed within the boundaries.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">If you filtered by OTHERS, you receive a list of non-standard or unknown devices.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e406 ">
+                                <span class="keyword parmname">coordinates</span></td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e408 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e410 ">The GPS coordinates (latitude, longitude) for the referenced asset (identified by assetUid), such as <strong class="ph b">32.711653,-117.157314</strong> to identify where the camera is installed. </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h3 class="title sectiontitle">Sample Response</h3>
+      
+      <pre class="pre codeblock">{
+  "content": [
+    {
+      "assetUid": "STG-HYP1087-170",
+      "parentAssetUid": "POLE-HYP1087-43",
+      "eventTypes": [
+        "TFEVT",
+        "PKIN",
+        "PEDEVT",
+        "PKOUT"
+      ],
+      "mediaType": "IMAGE",
+      "assetType": "CAMERA",
+      "coordinates": "30.328126000000001:-81.6596200000000039"
+    },
+  ],
+  "last": true,
+  "totalElements": 6,
+  "totalPages": 1,
+  "numberOfElements": 6,
+  "first": true,
+  "sort": null,
+  "size": 50,
+  "number": 0
+}</pre>
+
+    </div>
+</div>
+</div>
+<div class="topic reference nested1" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b"><h2 class="title topictitle2">Get Asset Details</h2>
+<div class="body refbody"><div class="section">
+      <p class="p">This API returns details on a particular asset.</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Request URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">{{metadataurl}}/v2/assets/{assetUid}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">{{metadataurl}}/v2/assets/CAMERA-STG-HYP1042-CAM-L</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d1442e618">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d1442e620">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d1442e622">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d1442e624">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d1442e618 ">assetUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d1442e620 ">GE identifier for an asset.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d1442e622 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d1442e624 ">For example, CAMERA-STG-HYP1042-CAM-L</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Response Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="20%" id="d1442e649">Parameter</th>
+<th class="entry" valign="top" width="14.482758620689657%" id="d1442e651">Data Type</th>
+<th class="entry" valign="top" width="65.51724137931035%" id="d1442e653">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e649 ">description</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e651 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e653 ">Description of the asset.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e649 "><span class="keyword parmname">properties</span></td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e651 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e653 ">Properties of the asset. <dl class="dl"><dt class="dt dlterm">CENTER_GEO_COORDINATE</dt>
+<dd class="dd">Not used</dd>
+<dt class="dt dlterm">COLOR_TYPE</dt>
+<dd class="dd">Black and white (BW) or color image.</dd>
+<dt class="dt dlterm">HOMOGRAPHY</dt>
+<dd class="dd">Not used.</dd>
+<dt class="dt dlterm">IMAGE_SIZE</dt>
+<dd class="dd">The height and width of the image in pixels.</dd>
+<dt class="dt dlterm">VIEW</dt>
+<dd class="dd">Calculated in degrees. (0-360) '0' is knot or initial value. </dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e649 "><span class="keyword parmname">assetUid</span></td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e651 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e653 ">A unique identifier established by a customer or external resource. For example, CAMERA-STG-HYP1042-CAM-L to identify a camera.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e649 ">parentAssetUid</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e651 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e653 ">A unique identifier assigned to the asset at the top of a hierarchical set of assets, in other words, the parent of a child asset. For example, a node is a parent asset, comprising child assets such as cameras or microphones.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e649 "><span class="keyword parmname">eventTypes</span></td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e651 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e653 ">Insert one of the following enumeration codes for a specific event type.<p class="p"> </p>
+<dl class="dl"><dt class="dt dlterm"><u class="ph u">ENVIRONMENTS</u></dt>
+<dd class="dd">Insert one of the following codes for a specific location type for <strong class="ph b">ENVIRONMENTS</strong>: </dd>
+<dt class="dt dlterm">PKIN</dt>
+<dd class="dd">If you filter by PKIN, you receive a list of vehicles (identified by object-id) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">If you filter by PKOUT you receive a list of vehicles (identified by object-id) exiting parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PEDEVT</dt>
+<dd class="dd">If you filter by PEDEVT, you receive a list of pedestrians (identified by object-id) exiting monitored areas with within the boundaries.</dd>
+<dt class="dt dlterm">TFEVT</dt>
+<dd class="dd">If you filter by TFEVT, you receive a list of traffic flow data.<p class="p"> </p>
+</dd>
+<dt class="dt dlterm"><u class="ph u">CITIES</u></dt>
+<dd class="dd">Insert on of the following codes for a specific location type for <strong class="ph b">CITIES</strong>:</dd>
+<dt class="dt dlterm">ENCHG</dt>
+<dd class="dd">If you filter by ENCHG, you receive a list of changed environmental conditions, such as temperature.</dd>
+<dt class="dt dlterm">LIGHT_LEVEL</dt>
+<dd class="dd">If you filter by LIGHT_LEVEL, you receive a list of assets that report illuminance sensor events within the specified bounded area.</dd>
+<dt class="dt dlterm">OCCUPANCY</dt>
+<dd class="dd">If you filter by OCCUPANCY, you receive a list of assets that report occupancy sensor events within the specified bounded area.</dd>
+<dt class="dt dlterm">TEMP</dt>
+<dd class="dd">If you filter by TEMP, you receive a list of assets that report temperature sensor events within the specified bounded area.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e649 "> mediaType<div class="note note"><span class="notetitle">Note:</span> Get Media only works when you have access to Situational Awareness.</div>
+</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e651 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e653 ">Insert one of the following enumeration codes for a specific media type.<dl class="dl"><dt class="dt dlterm">IMAGE</dt>
+<dd class="dd">If you filter by IMAGE, you receive a list of images in JPG, PNG, or GIF formats.</dd>
+<dd class="dd">Depending on the position of the camera, it will return the best resolution image available: either 320x240 for black and white or 1920x1080 for color.</dd>
+<dt class="dt dlterm">VIDEO</dt>
+<dd class="dd">If you filter by VIDEO, you receive a list of videos in H.264 format.</dd>
+<dd class="dd">By default, the video length is 1 minute. You can use VLC player to open the video.</dd>
+<dt class="dt dlterm">AUDIO</dt>
+<dd class="dd">If you filter by AUDIO, you receive a list of audio files in MP3 or WAV format.  This is not supported in v2.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">If you filtered by OTHERS, you receive a list of non-standard formats.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e649 "> assetType</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e651 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e653 ">Insert one of the following enumeration codes to filter by a specific asset type.<dl class="dl"><dt class="dt dlterm">NODE</dt>
+<dd class="dd">Parent asset. </dd>
+<dd class="dd">When you filter by NODE and a bounding box, you receive a list of devices attached to each node within the boundaries, such as a camera or microphone.</dd>
+<dt class="dt dlterm">CAMERA</dt>
+<dd class="dd">If you filter by CAMERA, you receive a list of all cameras installed within the bounding box.</dd>
+<dt class="dt dlterm">MIC</dt>
+<dd class="dd">If you filter by MIC, you receive a list of all audio devices installed within the boundaries.</dd>
+<dt class="dt dlterm">ENV</dt>
+<dd class="dd">If you filter by ENV, you receive a list of all environmental sensors installed within the boundaries.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">If you filter by OTHERS, you receive a list of non-standard or unknown devices.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e649 "><span class="keyword parmname">coordinates</span></td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e651 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e653 ">The GPS coordinates (latitude, longitude) for the referenced asset (identified by assetUid), such as <strong class="ph b">32.711653,-117.157314</strong> to identify where the camera is installed. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e649 ">status</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e651 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e653 ">Status of the asset that is recording the events.<dl class="dl"><dt class="dt dlterm">ONLINE</dt>
+<dd class="dd">Collecting data.</dd>
+<dt class="dt dlterm">OFFLINE</dt>
+<dd class="dd">Not collecting data.</dd>
+<dt class="dt dlterm">UNKNOWN</dt>
+<dd class="dd">Unknown status.</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Sample Response</h3>
+      
+      <pre class="pre codeblock">{
+  "description": "This is a CAMERA",
+  "properties":
+{
+    "HOMOGRAPHY": "-0.00144262851012974,0.02453062516689878,64.20463131147713,4.028365976010364E-4,-0.006849374117427758,-17.9267206480953,1.23148222457587E-5,-2.093831593825796E-4,-0.5480243058217796",
+    "CENTER_GEO_COORDINATE": "32.7116098:-117.1565843",
+    "IMAGE_SIZE": "320:640",
+    "COLOR_TYPE": "COLOR",
+    "VIEW": "88.0"
+  },
+  "assetUid": "CAMERA-STG-HYP1042-CAM-L",
+  "parentAssetUid": "NODE-STG-HYP1042",
+  "eventTypes": [
+    "PEDEVT"
+  ],
+  "mediaType": "IMAGE,VIDEO",
+  "assetType": "CAMERA",
+  "coordinates": "32.711628:-117.156618",
+  "status": "ONLINE"
+}</pre>
+
+    </div>
+</div>
+</div>
+<div class="topic reference nested1" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd"><h2 class="title topictitle2">Get List of Locations</h2>
+<div class="body refbody"><div class="section">
+      <p class="p">This API returns a list of locations within a bounding box (bbox) that you define with GPS coordinates.</p>
+
+    </div>
+<div class="section">
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Request URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">{{metadataurl}}/v2/locations/search?bbox=&lt;long,lat&gt;&amp;page=&lt;int&gt;&amp;size=&lt;int&gt;&amp;q=locationType:&lt;locationType1&gt; </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">{{metadataurl}}/locations/search?bbox=32.715675:-117.161230,32.708498:-117.151681&amp;page=0&amp;size=50&amp;q=locationType:TRAFFIC_LANE;WALKWAY;PARKING_ZONE</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d1442e949">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d1442e951">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d1442e953">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d1442e955">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d1442e949 ">bbox</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d1442e951 ">The bounded area for your search, identified by GPS coordinates. <em class="ph i">For more information, see the Glossary section.</em></td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d1442e953 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d1442e955 "><strong class="ph b">bbox=x1:y1, x2:y2</strong>. Replace x1:y1, x2:y2 with GPS coordinates, similar to 32.715675:-117.161230,32.708498:-117.151681. You can use Google Maps to obtain the latitude and longitude. To locate GPS coordinates for the area and identify the boundaries, place the cursor in the upper left location of the area, then right-click and select <strong class="ph b">What’s here?</strong> to obtain the first set of coordinates. Right-click on the lower-right location and repeat this procedure to obtain the second set of coordinates.<p class="p"><img class="image" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__image_f49ab071-eb85-451c-b7a3-2469856537cc" src="i_bbox_graphic_small.png"></img></p>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d1442e949 ">q</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d1442e951 ">Identifies a "type" query.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d1442e953 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d1442e955 ">Query to search by location type.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d1442e949 ">locationType</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d1442e951 ">Filter by type of location.  </td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d1442e953 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d1442e955 ">Insert one of the following codes for a specific location type:<dl class="dl"><dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">OTHERS consists of non-standard location types within the boundaries.</dd>
+<dt class="dt dlterm">PARKING SPOT</dt>
+<dd class="dd">If you filter by PARKING_SPOT, you receive a list of demarcated parking spaces within the boundaries. (Not applicable in v2.)</dd>
+<dt class="dt dlterm">PARKING ZONE</dt>
+<dd class="dd">PARKING_ZONE consists of four GEO coordinates of non-demarcated parking spaces within the boundaries.</dd>
+<dt class="dt dlterm">RETAIL STORE</dt>
+<dd class="dd">RETAIL-STORE consists of retail stores within the boundaries.</dd>
+<dt class="dt dlterm">TRAFFIC LANE</dt>
+<dd class="dd">TRAFFIC_LANE consists of two GEO coordinates indicating a trip wire in traffic lanes within the boundaries.</dd>
+<dt class="dt dlterm">WALKWAY</dt>
+<dd class="dd">WALKWAY consists of two GEO coordinates indicate a trip wire in pedestrian walkways within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d1442e949 ">locationUid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d1442e951 ">A unique identifier established by a customer or external resource for a specific location within the monitored area.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d1442e953 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d1442e955 ">For example, LOCATION-STG-323.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d1442e949 ">size</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d1442e951 ">Maximum number of records to return per page; if none specified, the default is used automatically.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d1442e953 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d1442e955 ">Numerical value.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d1442e949 ">page</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d1442e951 ">Indicates the page number; default value is 0. </td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d1442e953 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d1442e955 ">Numerical value.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Response Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="20%" id="d1442e1065">Parameter</th>
+<th class="entry" valign="top" width="14.482758620689657%" id="d1442e1067">Data Type</th>
+<th class="entry" valign="top" width="65.51724137931035%" id="d1442e1069">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e1065 ">locationUID</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e1067 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e1069 ">A unique identifier established by a customer or external resource for a specific location within the monitored area. For example, LOCATION-STG-323.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e1065 ">locationType</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e1067 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e1069 ">Insert one of the following codes for a specific location type:<dl class="dl"><dt class="dt dlterm">PARKING SPOT</dt>
+<dd class="dd">If you filter by PARKING_SPOT, you receive a list of demarcated parking spaces within the boundaries. (Not applicable in v2.)</dd>
+<dt class="dt dlterm">PARKING ZONE</dt>
+<dd class="dd">PARKING_ZONE consists of four GEO coordinates of non-demarcated parking spaces within the boundaries.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">OTHERS consists of non-standard location types within the boundaries.</dd>
+<dt class="dt dlterm">TRAFFIC LANE</dt>
+<dd class="dd">TRAFFIC_LANE consists of two GEO coordinates indicating a trip wire in traffic lanes within the boundaries.</dd>
+<dt class="dt dlterm">RETAIL STORE</dt>
+<dd class="dd">RETAIL-STORE consists of retail stores within the boundaries.</dd>
+<dt class="dt dlterm">WALKWAY</dt>
+<dd class="dd">WALKWAY consists of two GEO coordinates indicate a trip wire in pedestrian walkways within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e1065 ">parentLocationUid</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e1067 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e1069 ">The unique identifier assigned to the parent location comprising the locationUids within the monitored area.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e1065 ">coordinatesType</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e1067 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e1069 ">
+                <dl class="dl"><dt class="dt dlterm">GEO</dt>
+<dd class="dd">GEO indicates that the coordinate type is GPS</dd>
+</dl>
+
+              </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d1442e1065 ">coordinates</td>
+<td class="entry" valign="top" width="14.482758620689657%" headers="d1442e1067 ">String</td>
+<td class="entry" valign="top" width="65.51724137931035%" headers="d1442e1069 ">The GPS coordinates (latitude, longitude) for the referenced asset (identified by assetUid), such as <strong class="ph b">32.711653,-117.157314</strong> to identify the location of the camera. </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Sample Response - Intelligent Cities</h3>
+      
+      <pre class="pre codeblock">{
+  "content": [
+    {
+      "locationUid": "177-parkingzone",
+      "locationType": "PARKING_ZONE",
+      "parentLocationUid": null,
+      "coordinatesType": "GEO",
+      "coordinates": "30.328164456985096:-81.65958708005638,30.32812646376904:-81.65959816387478,30.328148376658532:-81.65970123011935,30.32818656444743:-81.6596900624812"
+    },
+    {
+      "locationUid": "HYP1087-170-Lane1",
+      "locationType": "TRAFFIC_LANE",
+      "parentLocationUid": null,
+      "coordinatesType": "GEO",
+      "coordinates": "30.32815726241225:-81.65960375060847"
+    },
+    {
+      "locationUid": "HYP1087-171-Lane2",
+      "locationType": "TRAFFIC_LANE",
+      "parentLocationUid": null,
+      "coordinatesType": "GEO",
+      "coordinates": "30.328135456985095:-81.65961066678872"
+    },
+    {
+      "locationUid": "HYP1089-175-Lane1",
+      "locationType": "TRAFFIC_LANE",
+      "parentLocationUid": null,
+      "coordinatesType": "GEO",
+      "coordinates": "30.328151973944955:-81.65968247574844"
+    },
+    {
+      "locationUid": "LOCATION-UNIQUE-ID",
+      "locationType": "PARKING_ZONE",
+      "parentLocationUid": null,
+      "coordinatesType": "GEO",
+      "coordinates": "30.328164456985096:-81.65958708005638,30.32812646376904:-81.65959816387478,30.328148376658532:-81.65970123011935,30.32818656444743:-81.6596900624812"
+    }
+  ],
+  "last": true,
+  "totalPages": 1,
+  "totalElements": 5,
+  "numberOfElements": 5,
+  "first": true,
+  "sort": null,
+  "size": 50,
+  "number": 0
+}</pre>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Sample Response - Intelligent Enterprises</h3>
+      
+      <p class="p">Placeholder for Intelligent Enterprises Sample Response</p>
+
+    </div>
+</div>
+</div>
+<div class="topic reference nested1" id="reference_81ac3b61-68e8-4ae6-8f5b-d9d07d5c0882"><h2 class="title topictitle2">Get Location Details</h2>
+<div class="body refbody"><div class="section">
+      <p class="p">This API returns details on a particular location.</p>
+
+    </div>
+<div class="section">
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_81ac3b61-68e8-4ae6-8f5b-d9d07d5c0882__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Request URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">{{metadataurl}}/locations/{locationUid} id}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">{{metadataurl}}/locations/LOCATION-STG-323</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Query Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_81ac3b61-68e8-4ae6-8f5b-d9d07d5c0882__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d1442e1222">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d1442e1224">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d1442e1226">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d1442e1228">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d1442e1222 ">id</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d1442e1224 ">GE identifier for a location.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d1442e1226 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d1442e1228 ">For example, LOCATION-STG-323</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Response Parameters</h3>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_81ac3b61-68e8-4ae6-8f5b-d9d07d5c0882__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="14.189837008628956%" id="d1442e1253">Parameter</th>
+<th class="entry" valign="top" width="10.258868648130393%" id="d1442e1255">Data Type</th>
+<th class="entry" valign="top" width="75.55129434324066%" id="d1442e1257">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d1442e1253 "> locationUid</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d1442e1255 ">String</td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d1442e1257 ">A unique identifier established by a customer or external resource for a specific location within the monitored area. For example, LOCATION-STG-323.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d1442e1253 "> locationType</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d1442e1255 ">String</td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d1442e1257 ">Insert one of the following codes for a specific location type:<dl class="dl"><dt class="dt dlterm">RETAIL STORE</dt>
+<dd class="dd">RETAIL-STORE consists of retail stores within the boundaries.</dd>
+<dt class="dt dlterm">OTHERS</dt>
+<dd class="dd">OTHERS consists of non-standard location types within the boundaries.</dd>
+<dt class="dt dlterm">TRAFFIC LANE</dt>
+<dd class="dd">TRAFFIC_LANE consists of two GEO coordinates indicating a trip wire in traffic lanes within the boundaries.</dd>
+<dt class="dt dlterm">WALKWAY</dt>
+<dd class="dd">WALKWAY consists of two GEO coordinates indicating a trip wire in pedestrian walkways within the boundaries.</dd>
+<dt class="dt dlterm">PARKING ZONE</dt>
+<dd class="dd">PARKING_ZONE consists of four GEO coordinates of non-demarcated parking spaces within the boundaries.</dd>
+<dt class="dt dlterm">PARKING SPOT</dt>
+<dd class="dd">If you filter by PARKING_SPOT, you receive a list of demarcated parking spaces within the boundaries. (Not applicable in v2.)</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d1442e1253 ">parentLocationUid</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d1442e1255 ">String</td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d1442e1257 ">The unique identifier assigned to the parent location comprising the locationUids within the monitored area. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d1442e1253 ">coordinatesType</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d1442e1255 ">String</td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d1442e1257 ">GEO indicates that the coordinate type is GPS.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d1442e1253 "> coordinates</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d1442e1255 ">String</td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d1442e1257 ">The GPS coordinates (latitude, longitude) for the referenced asset (identified by assetUid), such as <strong class="ph b">32.711653,-117.157314</strong> to identify the location of the camera. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="14.189837008628956%" headers="d1442e1253 ">city, state, country, zip code, timezone, address</td>
+<td class="entry" valign="top" width="10.258868648130393%" headers="d1442e1255 ">String</td>
+<td class="entry" valign="top" width="75.55129434324066%" headers="d1442e1257 ">Physical location information.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">References</h3>
+      
+      <div class="p">You may need to access the GE Current Swagger sites to better utilize the APIs.  <ul class="ul" id="reference_81ac3b61-68e8-4ae6-8f5b-d9d07d5c0882__ul_b6c4f613-658c-4b0d-bd42-8bf8cb4ddadb"><li class="li">Click on <a class="xref" href="https://ie-cities-media.run.asv-pr.ice.predix.io/v2/swagger-ui.html" target="_blank">https://ie-cities-media.run.asv-pr.ice.predix.io/v2/swagger-ui.html</a> to access the Rest endpoint Media Service API Swagger site.</li>
+<li class="li">Click on <a class="xref" href="https://ie-cities-metadata.run.asv-pr.ice.predix.io/v2/swagger-ui.html" target="_blank">https://ie-cities-metadata.run.asv-pr.ice.predix.io/v2/swagger-ui.html</a> to access the Rest endpoint Intelligent Environment Services API Swagger site.</li>
+<li class="li">Click on <a class="xref" href="https://ie-cities-events.run.asv-pr-pub.ice.predix.io/v2/swagger-ui.html" target="_blank">https://ie-cities-events.run.asv-pr-pub.ice.predix.io/v2/swagger-ui.html</a> to access the Rest endpoint Intelligent Environment Event Services Swagger site.<p class="p"> </p>
+</li>
+</ul>
+</div>
+
+    </div>
+<div class="section"><h3 class="title sectiontitle">Sample Response</h3>
+      
+      <pre class="pre codeblock">{
+  "locationUid": "LOCATION-UNIQUE-ID",
+  "locationType": "PARKING_ZONE",
+  "parentLocationUid": null,
+  "coordinatesType": "GEO",
+  "coordinates": "30.328164456985096:-81.65958708005638,30.32812646376904:-81.65959816387478,30.328148376658532:-81.65970123011935,30.32818656444743:-81.6596900624812",
+  "city": "Sleeping Clove",
+  "state": "CA",
+  "country": "USA",
+  "zipcode": "12345",
+  "timezone": "PST",
+  "address": "1234 Main Street",
+  "analyticCategory": {
+    "PKOCC": "PARKING",
+    "PKOVLP": "PARKING"
+  }
+}</pre>
+
+    </div>
+</div>
+</div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

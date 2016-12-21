@@ -1,0 +1,202 @@
+{
+    "classifications": [
+        {
+            "id": "Class1",
+            "name": "Class 1",
+            "description": "This is class 1",
+            "properties": [
+                {
+                    "id": "property1",
+                    "value": [
+                        "value1",
+                        "value2"
+                    ],
+                    "type": "string"
+                }
+            ],
+            "ccomClass": "ENTERPRISE_TYPE"
+        },
+        {
+            "id": "Class2",
+            "name": "Class 2",
+            "description": "This is class 2",
+            "ccomClass": "SITE_TYPE"
+        },
+        {
+            "id": "Class3",
+            "name": "Class 3",
+            "description": "This is class 3",
+            "ccomClass": "ASSET_TYPE"
+        }
+    ],
+    "instances": [
+        {
+            "id": "Instance1",
+            "name": "Instance 1",
+            "description": "This is instance 1",
+            "properties": [
+                {
+                    "id": "property2",
+                    "value": [
+                        123,
+                        456
+                    ],
+                    "type": "int",
+                    "uom": "m"
+                }
+            ],
+            "classification": "Class1",
+            "ccomClass": "ENTERPRISE"
+        },
+        {
+            "id": "Instance2",
+            "name": "Instance 2",
+            "description": "This is instance 2",
+            "properties": [
+                {
+                    "id": "location",
+                    "value": [
+                        -33.1268,
+                        40.28253
+                    ],
+                    "type": "float"
+                }
+            ],
+            "classification": "Class2",
+            "ccomClass": "SITE"
+        },
+        {
+            "id": "Device1",
+            "name": "Device 1",
+            "description": "This is device 1",
+            "properties": [],
+            "classification": "Class3",
+            "ccomClass": "ASSET"
+        }
+    ],
+    "connections": [
+        {
+            "from": {
+                "id": "Instance2",
+                "ccomClass": "SITE"
+            },
+            "to": [
+                {
+                    "type": "parent",
+                    "id": "Instance1",
+                    "ccomClass": "ENTERPRISE"
+                },
+                {
+                    "type": "connected",
+                    "id": "Device1",
+                    "ccomClass": "ASSET"
+                }
+            ]
+        },
+        {
+            "from": {
+                "id": "Device1",
+                "ccomClass": "ASSET"
+            },
+            "to": [
+                {
+                    "type": "selfie",
+                    "id": "Device1",
+                    "ccomClass": "ASSET"
+                }
+            ]
+        }
+    ],
+    "tagClassifications": [
+        {
+            "id": "TagType1",
+            "name": "Tag 1",
+            "description": "This is tag 1",
+            "unitGroup": "length",
+            "properties": [
+                {
+                    "id": "configured",
+                    "value": [false],
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "id": "TagType2",
+            "name": "Tag 2",
+            "description": "This is tag 2",
+            "unitGroup": "pressure",
+            "properties": [
+                {
+                    "id": "configured",
+                    "value": [false],
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "id": "TagType3",
+            "name": "Tag 3",
+            "description": "This is tag 3",
+            "unitGroup": "temperature",
+            "properties": [
+                {
+                    "id": "configured",
+                    "value": [false],
+                    "type": "boolean"
+                }
+            ]
+        }
+    ],
+    "tagAssociations": [
+        {
+            "monitoredEntity": {
+                "id": "Instance2",
+                "ccomClass": "SITE"
+            },
+            "tags": [
+                {
+                    "id": "Tag1",
+                    "classification": "TagType1",
+                    "unit": "m",
+                    "aliases": ["TagAlias1"],
+                    "correlation": ["Tag1", "Tag2"],
+                    "properties": [
+                        {
+                            "id": "alias",
+                            "value": ["TAG_1"],
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "id": "Tag2",
+                    "classification": "TagType2",
+                    "unit": "atm"
+                }
+            ]
+        },
+        {
+            "monitoredEntity": {
+                "id": "Device1",
+                "ccomClass": "ASSET"
+            },
+            "tags": [
+                {
+                    "id": "Tag3",
+                    "classification": "TagType3",
+                    "unit": "deg C",
+                    "aliases": ["TagAlias3_1", "TagAlias3_2"],
+                    "properties": [
+                        {
+                            "id": "compression",
+                            "value": [10],
+                            "type": "int",
+                            "uom": "%"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

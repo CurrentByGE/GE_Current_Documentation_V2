@@ -1,0 +1,4 @@
+fil = new Array();
+fil["0"]= "Chunk1058255023.html@@@Intelligent Environments Overview@@@Current Intelligent Environments is a set of services and APIs that GE has made available to facilitate application development. The services are in two categories, Intelligent Cities and Intelligent...";
+fil["1"]= "Chunk359502033.html@@@General APIs@@@Each of the APIs are connected to a JAVA app simulator, which simulates city and enterprises data that mimics data from the node...";
+fil["2"]= "Chunk710611284.html@@@Intelligent Cities APIs@@@Using WebSocket with the Intelligent Cities services: Parking Planning, Traffic Planning, and Pedestrian Planning API services provides the ability to retrieve near-real-time data by assetUID, locations (bbox), or locationUID to obtain insight into the events collected by each service...";
