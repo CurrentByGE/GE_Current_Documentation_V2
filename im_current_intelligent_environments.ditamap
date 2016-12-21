@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA 1.2 BookMap//EN" "bookmap.dtd" [
+]>
+<bookmap id="current_ie"><booktitle><mainbooktitle>Current Intelligent Environments</mainbooktitle></booktitle><bookmeta><data name="library" value="review"/><data name="profile" value="default"/><data name="productGroupId" value="current_ie"/></bookmeta><chapter href="g_currents_wrapper.dita"><mapref href="am_about_intelligent_environments.ditamap"></mapref><mapref href="am_general_apis.ditamap"></mapref><mapref href="am_intelligent_cities_apis.ditamap"></mapref></chapter></bookmap>

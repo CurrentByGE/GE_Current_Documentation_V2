@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA 1.2 Concept//EN" "concept.dtd" [
+]>
+<concept id="concept_dbd1db1a-5644-4666-a4c5-037208e6cdee"><title>Intelligent Cities API Overview</title><prolog><author>Linda Castellani</author></prolog><conbody><p>Each Intelligent Cities API provides asset and location information, with additional URI resources and data collected from sensors installed on intelligent lighting fixtures in roadways and parking areas. Each API service is described below.</p><note>
+            <p>Please contact your Current, Powered by GE representative to obtain the following before you start developing: </p>
+            <ol id="ol_f03f745c-d32e-473c-a64b-d69d3744404c"><li>client-id and client-secret to generate client tokens</li><li>predix-zone-id for each service</li><li>services' URLs.</li></ol>
+        </note><section>
+            <title>Parking Planning </title>
+            <p>The Parking Planning service provides parking metadata that is collected from intelligent lighting sensors installed along public roadways or in parking lots. Each time a vehicle enters or leaves a parking space, a timestamped event is created and stored in the Predix cloud. </p>
+            <p>This data can be obtained from a single sensor or a group of sensors, as needed, and can provide valuable insights about the parking activity in a given region. The data can also be used to improve safety and parking convenience.</p>
+        </section><section>
+            <title>Pedestrian Planning</title>
+            <p>The Pedestrian Planning service provides pedestrian metadata that is collected from intelligent lighting sensors installed along public roadways or in parking lots. </p>
+            <p>As pedestrians enter or leave a region of interest, the service creates and stores a timestamped event, counting each event. This data can be obtained from a single sensor or a group of sensors, as needed, to provide insights to city officials and local businesses about pedestrian usage in a given region. The data can also be used to enhance safety and convenience.</p>
+        </section><section>
+            <title>Traffic Planning</title>
+            <p>The Traffic Planning service provides vehicle metadata collected from intelligent lighting sensors installed along public roadways.</p>
+            <p>As vehicles pass by these sensors, information such as speed, direction, lane use, and volume (counts) are collected and stored with a time-stamp in the Predix cloud. The data can be viewed from any number of intelligent street lights in a given region and can present both historical and near real-time information. </p>
+            <p>The density, range, and flexibility of this sensor data can provide insights into traffic patterns at different intervals. Along with facilitating the planning for future safety and convenience enhancements, the data can reveal opportunities to optimize traffic flows.</p>
+            <p>One response is provided for each car that traverses the area monitored by the device. </p>
+        </section><section>
+            <title>Situational Awareness (Media)</title>
+            <p>The Situational Awareness service provides access to images, video, and other media collected from intelligent lighting sensors installed along public roadways or parking lots. </p>
+            <p>The media can be requested using a date range starting near real-time and ending based on availability. This data can be obtained from a single sensor or a group of sensors, as needed, to provide insights to city officials that enhance awareness. This service can be used in concert with other Intelligent Environments services to enhance a use case of interest.</p>
+            <p>Images are captured for a variety of scenarios for vehicles and pedestrians.</p>
+        </section><section>
+            <title>WebSocket Information for Intelligent Cities APIs</title>
+            <p>WebSocket functions with the Intelligent Cities API services, and provides the ability to retrieve near real-time data to obtain insight into events collected by each service. </p>
+        </section></conbody></concept>
